@@ -43,5 +43,5 @@ namespace ConfigPC
         public virtual HDMemoryType HDMemoryType { get; set; }
 
         public virtual Interface Interface1 { get; set; }
-    }
+    }    
 }

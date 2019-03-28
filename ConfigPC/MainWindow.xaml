@@ -5,11 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConfigPC"
         mc:Ignorable="d"
-        Title="ConfigPC" Height="230" Width="400">
+        Title="ConfigPC" Height="268" Width="400">
     <Window.Resources>
-        <Style x:Key="TextStyle">
+        <Style x:Key="LeftCol">
             <Setter Property="Control.FontFamily" Value="Segoe UI Light"/>
             <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.Margin" Value="8"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="RightCol">
+            <Setter Property="Control.FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.Margin" Value="4"/>
         </Style>
     </Window.Resources>
     <StackPanel Margin="20 20 20 20">
@@ -22,23 +29,25 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <TextBlock HorizontalAlignment="Right" Style="{StaticResource TextStyle}" Margin="8 8 8 8">
-                Бюджет
+                <TextBlock Style="{StaticResource LeftCol}">
+                Ваш бюджет
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Right" Style="{StaticResource TextStyle}" Margin="8 8 8 8">
+                <TextBlock Style="{StaticResource LeftCol}">
                 Назначение
-                </TextBlock>                
+                </TextBlock>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <TextBox x:Name="Price"  Style="{StaticResource TextStyle}" Padding="3" Margin="8 5 8 5"/>
-                <ComboBox  Style="{StaticResource TextStyle}" Margin="8 5 8 5">
+                <TextBox x:Name="Price" Style="{StaticResource RightCol}" Padding="3"/>
+                <ComboBox x:Name="Purpose" Style="{StaticResource RightCol}">
+                    <ComboBoxItem Content="Работа с видео/фото"/>
                     <ComboBoxItem Content="Игровой" IsSelected="True"/>
                     <ComboBoxItem Content="Офисный"/>
                     <ComboBoxItem Content="Интернет серфинг"/>
                     <ComboBoxItem Content="Сервер"/>
-                </ComboBox>
+                </ComboBox>                
             </StackPanel>
         </Grid>
-        <Button x:Name="Start" Width="70" Content="Собрать" Style="{StaticResource TextStyle}" Click="Start_Click"/>
+        <Button x:Name="Start" Width="70" HorizontalAlignment="Center" Content="Собрать" Style="{StaticResource LeftCol}" Click="Start_Click"/>
+        <TextBlock x:Name="label" HorizontalAlignment="Center" Style="{StaticResource LeftCol}"/>
     </StackPanel>
 </Window>

@@ -17,7 +17,14 @@ namespace ConfigPC
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Price.Text != "")
+            {
+                ExSysCore core = new ExSysCore(Price.Text, Purpose.SelectedIndex);
+            }
+            else
+            {
+                label.Text = "Введите бюджет.";
+            }
         }
     }
 }

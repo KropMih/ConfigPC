@@ -84,6 +84,10 @@
     <Compile Include="Models\Socket.cs" />
     <Compile Include="Models\SSDDrive.cs" />
     <Compile Include="Models\Videocard.cs" />
+    <Compile Include="Parameters\ComponentsContext.cs" />
+    <Compile Include="ResultWindow.xaml.cs">
+      <DependentUpon>ResultWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -116,7 +120,6 @@
     <Compile Include="Models\Interface.cs" />
     <Compile Include="Models\MemoryType.cs" />
     <Compile Include="Models\Motherboard.cs" />
-    <Compile Include="Models\MultiplierStatu.cs" />
     <Compile Include="Models\OpenGLVersion.cs" />
     <Compile Include="Models\OpticalDrive.cs" />
     <Compile Include="Parameters\Prices.cs" />
@@ -124,13 +127,16 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ResultWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\PCIE3Support.cs" />
     <Compile Include="Models\PowerBlock.cs" />
     <Compile Include="Models\Processor.cs" />
     <Compile Include="Models\ProcessorSery.cs" />
-    <Compile Include="Parameters\IRange.cs" />
+    <Compile Include="Parameters\Range.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

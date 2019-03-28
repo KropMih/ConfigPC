@@ -53,7 +53,7 @@ namespace ConfigPC
 
         public byte PCIE16xSlots { get; set; }
 
-        public short PCIE30 { get; set; }
+        public bool PCIE30 { get; set; }
 
         public virtual AudioChannel AudioChannel { get; set; }
 
@@ -66,8 +66,6 @@ namespace ConfigPC
         public virtual Interface Interface { get; set; }
 
         public virtual MemoryType MemoryType1 { get; set; }
-
-        public virtual PCIE3Support PCIE3Support { get; set; }
 
         public virtual Socket Socket1 { get; set; }
     }

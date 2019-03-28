@@ -42,11 +42,9 @@ namespace ConfigPC
 
         public byte? TDP { get; set; }
 
-        public short? Multiplier { get; set; }
+        public bool? Multiplier { get; set; }
 
         public virtual CodeName CodeName1 { get; set; }
-
-        public virtual MultiplierStatu MultiplierStatu { get; set; }
 
         public virtual ProcessorSery ProcessorSery { get; set; }
 
