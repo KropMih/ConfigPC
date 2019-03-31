@@ -20,6 +20,7 @@ namespace ConfigPC
             if (Price.Text != "")
             {
                 ExSysCore core = new ExSysCore(Price.Text, Purpose.SelectedIndex);
+                core.Build();
             }
             else
             {

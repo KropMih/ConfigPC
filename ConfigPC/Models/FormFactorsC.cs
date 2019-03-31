@@ -12,24 +12,18 @@ namespace ConfigPC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class MemoryType
+    public partial class FormFactorsC
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MemoryType()
+        public FormFactorsC()
         {
-            this.Motherboards = new HashSet<Motherboard>();
-            this.RAMs = new HashSet<RAM>();
-            this.Videocards = new HashSet<Videocard>();
+            this.Cases = new HashSet<Case>();
         }
     
         public short ID { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Motherboard> Motherboards { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RAM> RAMs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Videocard> Videocards { get; set; }
+        public virtual ICollection<Case> Cases { get; set; }
     }
 }

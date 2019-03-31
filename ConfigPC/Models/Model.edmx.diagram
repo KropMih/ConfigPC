@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e3048809c8d4dcd85006f54304719fb" Name="Diagram1">
+        <EntityTypeShape EntityType="Models.AudioCard" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.AudioCardType" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.AudioChannel" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.CasePlace" Width="1.5" PointX="6.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Case" Width="1.5" PointX="9" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Chipset" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.CodeName" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.CoolerCompatibility" Width="1.5" PointX="6" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Cooler" Width="1.5" PointX="3.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.CoolerType" Width="1.5" PointX="1.5" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.DirectXVersion" Width="1.5" PointX="3.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.DriveType" Width="1.5" PointX="0.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.FormFactorsC" Width="1.5" PointX="6.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.FormFactorsD" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.FormFactorsHD" Width="1.5" PointX="3.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.FormFactorsM" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.FormFactorsMB" Width="1.5" PointX="0.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.FormFactorsPB" Width="1.5" PointX="8.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.GPUModel" Width="1.5" PointX="3.75" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.HardDrive" Width="1.5" PointX="6" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.HDMemoryType" Width="1.5" PointX="3.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Interface" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.MemoryType" Width="1.5" PointX="0.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Motherboard" Width="1.75" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.OpenGLVersion" Width="1.5" PointX="3.75" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.OpticalDrive" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.PowerBlock" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Processor" Width="1.5" PointX="9" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ProcessorSery" Width="1.5" PointX="6.75" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.RAM" Width="1.5" PointX="6" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Socket" Width="1.5" PointX="0.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.SSDDrive" Width="1.5" PointX="6" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Videocard" Width="1.75" PointX="6" PointY="24.25" IsExpanded="true" />
+        <AssociationConnector Association="Models.FK_AudioCards_AudioCardTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_AudioCards_AudioChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_AudioCards_Interfaces" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Motherboards_AudioChannels" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Cases_CasePlace" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Cases_FormFactorsC" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Cases_FormFactorsMB" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Motherboards_Chipsets" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Processors_CodeNames" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_CoolerCompatibility_Coolers" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_CoolerCompatibility_Sockets" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Coolers_CoolerType" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Videocards_DirectXVersions" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_OpticalDrives_DriveTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_HardDrives_FormFactorsD" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_OpticalDrives_FormFactorsD" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_SSDDrives_FormFactorsD" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_HardDrives_FormFactorsHD" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_SSDDrives_FormFactorsHD" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Motherboards_FormFactorsM" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_RAM_FormFactorsM" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Motherboards_FormFactorsMB" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_PowerBlocks_FormFactorsPB" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Videocards_GPUModels" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_HardDrives_HDMemoryType" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_HardDrives_Interfaces" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_SSDDrives_HDMemoryType" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Motherboards_Interfaces" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_OpticalDrives_Interfaces" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_SSDDrives_Interfaces" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Motherboards_MemoryTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_RAM_MemoryTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Videocards_MemoryTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Motherboards_Sockets" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Videocards_OpenGLVersions" ManuallyRouted="true" >
+          <ConnectorPoint PointX="5.25" PointY="30.59375" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="30.59375" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="30.59375" />
+          <ConnectorPoint PointX="7.1604837918094333" PointY="30.59375" />
+          <ConnectorPoint PointX="7.1604837918094333" PointY="29.691712239583325" />
+        </AssociationConnector>
+        <AssociationConnector Association="Models.FK_Processors_ProcessorSeries" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Processors_Sockets" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

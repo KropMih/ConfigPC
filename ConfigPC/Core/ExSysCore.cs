@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using ConfigPC.Models;
 
 namespace ConfigPC
 {
@@ -11,10 +13,55 @@ namespace ConfigPC
         public decimal Price;
         public int Purpose;
 
+        public decimal MBPrice, ProcessorPrice, VideocardPrice, RAMPrice, HDPrice, SSDPrice, CoolerPrice, CasePrice, PBPrice;
+
         public ExSysCore(string price, int purpose)
         {
             Price = Convert.ToDecimal(price);
             Purpose = purpose;
+        }
+
+        public object Build()
+        {
+            using (ComponentsPC db = new ComponentsPC())
+            {
+                SetPriceFactors();
+
+                ProcessorPrice = GetComponentPrice(ProcessorFactor);
+                var processors = db.Processors.Where(p => p.Price < ProcessorPrice*(decimal)1.1).ToList();
+
+                MBPrice = GetComponentPrice(MBFactor);
+                var motherboards = db.Motherboards;
+
+                if (VideocardFactor != 0f)
+                {
+                    VideocardPrice = GetComponentPrice(VideocardFactor);
+                    var videocards = db.Videocards;
+                }
+
+                RAMPrice = GetComponentPrice(RAMFactor);
+                var RAMs = db.RAMs;
+
+                HDPrice = GetComponentPrice(HDFactor);
+                var HardDrives = db.HardDrives;
+
+                if (VideocardFactor != 0f)
+                {
+                    SSDPrice = GetComponentPrice(SSDFactor);
+                    var SSDDrives = db.SSDDrives;
+                }
+
+                CoolerPrice = GetComponentPrice(CoolerFactor);
+                var Cooelers = db.Coolers;
+
+                CasePrice = GetComponentPrice(CaseFactor);
+                var Cases = db.Cases;
+
+                PBPrice = GetComponentPrice(PBFactor);
+                var PowerBlocks = db.PowerBlocks;
+
+                return processors;
+            }
         }
 
         public string GetPriceType()
@@ -109,38 +156,6 @@ namespace ConfigPC
         public decimal GetComponentPrice(float Factor)
         {
             return Price * (decimal)Factor;
-        }
-
-        public decimal MBPrice, ProcessorPrice, VideocardPrice, RAMPrice, HDPrice, SSDPrice, CoolerPrice, CasePrice, PBPrice;
-
-        public object Build()
-        {
-            using (ComponentsContext db = new ComponentsContext())
-            {
-                SetPriceFactors();
-
-                MBPrice = GetComponentPrice(MBFactor);
-                //db.Motherboards.Find()..
-                ProcessorPrice = GetComponentPrice(ProcessorFactor);
-
-                if(VideocardFactor != 0f)
-                    VideocardPrice = GetComponentPrice(VideocardFactor);
-
-                RAMPrice = GetComponentPrice(RAMFactor);
-
-                HDPrice = GetComponentPrice(HDFactor);
-
-                if (VideocardFactor != 0f)
-                    SSDPrice = GetComponentPrice(SSDFactor);
-
-                CoolerPrice = GetComponentPrice(CoolerFactor);
-
-                CasePrice = GetComponentPrice(CaseFactor);
-
-                PBPrice = GetComponentPrice(PBFactor);
-
-                return 0;
-            }
         }
     }
 }

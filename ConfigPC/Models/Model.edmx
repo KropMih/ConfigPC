@@ -1,0 +1,2483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Models" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AudioCards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="Type" Type="smallint" />
+          <Property Name="Interface" Type="smallint" />
+          <Property Name="AudioChannels" Type="smallint" />
+        </EntityType>
+        <EntityType Name="AudioCardTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AudioChannels">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="CasePlace">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cases">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="Place" Type="smallint" />
+          <Property Name="FormFactor" Type="smallint" />
+          <Property Name="MBtype" Type="smallint" Nullable="false" />
+          <Property Name="PowerBlock" Type="tinyint" />
+          <Property Name="Count525" Type="tinyint" />
+          <Property Name="Count35" Type="tinyint" />
+          <Property Name="Count25" Type="tinyint" />
+          <Property Name="ExpantionSlots" Type="tinyint" />
+          <Property Name="Fans" Type="tinyint" />
+          <Property Name="FanPlaces" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Chipsets">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="CodeNames">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="CoolerCompatibility">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="CoolerID" Type="smallint" />
+          <Property Name="SocketID" Type="smallint" />
+        </EntityType>
+        <EntityType Name="Coolers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="Type" Type="smallint" Nullable="false" />
+          <Property Name="Material" Type="ntext" />
+          <Property Name="FanDiameter" Type="tinyint" />
+          <Property Name="FanSpeed" Type="smallint" />
+          <Property Name="Height" Type="smallint" />
+        </EntityType>
+        <EntityType Name="CoolerType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="DirectXVersions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DriveTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="FormFactorsC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormFactorsD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormFactorsHD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormFactorsM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="FormFactorsMB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="FormFactorsPB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GPUModels">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HardDrives">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="Type" Type="smallint" />
+          <Property Name="MemoryType" Type="smallint" />
+          <Property Name="Interface" Type="smallint" />
+          <Property Name="Capacity" Type="tinyint" />
+          <Property Name="FormFactor" Type="smallint" />
+          <Property Name="BuferCapacity" Type="tinyint" />
+          <Property Name="Speed" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="HDMemoryType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Interfaces">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="MemoryTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Motherboards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="Socket" Type="smallint" Nullable="false" />
+          <Property Name="FormFactor" Type="smallint" Nullable="false" />
+          <Property Name="Chipset" Type="smallint" Nullable="false" />
+          <Property Name="MemoryType" Type="smallint" Nullable="false" />
+          <Property Name="MemoryFormFactor" Type="smallint" Nullable="false" />
+          <Property Name="MemoryChannels" Type="smallint" Nullable="false" />
+          <Property Name="MaxFrequency" Type="int" />
+          <Property Name="MaxCapacity" Type="int" />
+          <Property Name="AudioChip" Type="ntext" />
+          <Property Name="AudioChannels" Type="smallint" />
+          <Property Name="SATA3" Type="tinyint" Nullable="false" />
+          <Property Name="M2connector" Type="tinyint" Nullable="false" />
+          <Property Name="M2interface" Type="smallint" Nullable="false" />
+          <Property Name="PCIE1xSlots" Type="tinyint" Nullable="false" />
+          <Property Name="PCIE16xSlots" Type="tinyint" Nullable="false" />
+          <Property Name="PCIE30" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OpenGLVersions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OpticalDrives">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="Type" Type="smallint" Nullable="false" />
+          <Property Name="FormFactor" Type="smallint" Nullable="false" />
+          <Property Name="Interface" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PowerBlocks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="Power" Type="tinyint" Nullable="false" />
+          <Property Name="FormFactor" Type="smallint" />
+          <Property Name="Sercificate" Type="ntext" />
+          <Property Name="SATAPower" Type="tinyint" />
+          <Property Name="MolexPower" Type="tinyint" />
+          <Property Name="PCIE8pinPower" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Processors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Source" Type="ntext" />
+          <Property Name="Series" Type="smallint" />
+          <Property Name="CodeName" Type="smallint" />
+          <Property Name="Socket" Type="smallint" />
+          <Property Name="Cores" Type="tinyint" />
+          <Property Name="CoreFrequency" Type="smallint" />
+          <Property Name="TurboBoost" Type="smallint" />
+          <Property Name="TechProcess" Type="tinyint" />
+          <Property Name="L1" Type="smallint" />
+          <Property Name="L2" Type="smallint" />
+          <Property Name="L3" Type="smallint" />
+          <Property Name="TDP" Type="tinyint" />
+          <Property Name="Multiplier" Type="bit" />
+        </EntityType>
+        <EntityType Name="ProcessorSeries">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="Capacity" Type="tinyint" Nullable="false" />
+          <Property Name="PlanksCount" Type="tinyint" Nullable="false" />
+          <Property Name="MemoryType" Type="smallint" Nullable="false" />
+          <Property Name="FormFactor" Type="smallint" Nullable="false" />
+          <Property Name="Frequency" Type="smallint" />
+          <Property Name="Speed" Type="tinyint" />
+          <Property Name="Timing1" Type="tinyint" />
+          <Property Name="Timing2" Type="tinyint" />
+          <Property Name="Timing3" Type="tinyint" />
+          <Property Name="Timing4" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Sockets">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" />
+        </EntityType>
+        <EntityType Name="SSDDrives">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="Type" Type="smallint" />
+          <Property Name="Capacity" Type="tinyint" />
+          <Property Name="MemoryType" Type="smallint" />
+          <Property Name="FormFactor" Type="smallint" />
+          <Property Name="Interface" Type="smallint" />
+          <Property Name="BuferCapacity" Type="tinyint" />
+          <Property Name="SpeedWrite" Type="tinyint" />
+          <Property Name="SpeedRead" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Videocards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" Nullable="false" />
+          <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Source" Type="ntext" Nullable="false" />
+          <Property Name="GPUModel" Type="smallint" Nullable="false" />
+          <Property Name="MemoryCapacity" Type="tinyint" Nullable="false" />
+          <Property Name="MemoryType" Type="smallint" Nullable="false" />
+          <Property Name="BusWidth" Type="smallint" />
+          <Property Name="GPUFrequency" Type="smallint" Nullable="false" />
+          <Property Name="MemoryFrequency" Type="smallint" Nullable="false" />
+          <Property Name="Techprocess" Type="tinyint" />
+          <Property Name="MaxResolution" Type="int" Nullable="false" />
+          <Property Name="HDMI" Type="tinyint" Nullable="false" />
+          <Property Name="DisplayPort" Type="tinyint" Nullable="false" />
+          <Property Name="DirectX" Type="smallint" />
+          <Property Name="OpenGL" Type="smallint" />
+          <Property Name="RecPB" Type="tinyint" Nullable="false" />
+          <Property Name="ExpantionSlots" Type="tinyint" Nullable="false" />
+          <Property Name="Length" Type="smallint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AudioCards_AudioCardTypes">
+          <End Role="AudioCardTypes" Type="Self.AudioCardTypes" Multiplicity="0..1" />
+          <End Role="AudioCards" Type="Self.AudioCards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AudioCardTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioCards">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AudioCards_AudioChannels">
+          <End Role="AudioChannels" Type="Self.AudioChannels" Multiplicity="0..1" />
+          <End Role="AudioCards" Type="Self.AudioCards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AudioChannels">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioCards">
+              <PropertyRef Name="AudioChannels" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AudioCards_Interfaces">
+          <End Role="Interfaces" Type="Self.Interfaces" Multiplicity="0..1" />
+          <End Role="AudioCards" Type="Self.AudioCards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioCards">
+              <PropertyRef Name="Interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_CasePlace">
+          <End Role="CasePlace" Type="Self.CasePlace" Multiplicity="0..1" />
+          <End Role="Cases" Type="Self.Cases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CasePlace">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="Place" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_FormFactorsC">
+          <End Role="FormFactorsC" Type="Self.FormFactorsC" Multiplicity="0..1" />
+          <End Role="Cases" Type="Self.Cases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsC">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_FormFactorsMB">
+          <End Role="FormFactorsMB" Type="Self.FormFactorsMB" Multiplicity="1" />
+          <End Role="Cases" Type="Self.Cases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsMB">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="MBtype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoolerCompatibility_Coolers">
+          <End Role="Coolers" Type="Self.Coolers" Multiplicity="0..1" />
+          <End Role="CoolerCompatibility" Type="Self.CoolerCompatibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coolers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CoolerCompatibility">
+              <PropertyRef Name="CoolerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoolerCompatibility_Sockets">
+          <End Role="Sockets" Type="Self.Sockets" Multiplicity="0..1" />
+          <End Role="CoolerCompatibility" Type="Self.CoolerCompatibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sockets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CoolerCompatibility">
+              <PropertyRef Name="SocketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coolers_CoolerType">
+          <End Role="CoolerType" Type="Self.CoolerType" Multiplicity="1" />
+          <End Role="Coolers" Type="Self.Coolers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoolerType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Coolers">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HardDrives_FormFactorsD">
+          <End Role="FormFactorsD" Type="Self.FormFactorsD" Multiplicity="0..1" />
+          <End Role="HardDrives" Type="Self.HardDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HardDrives">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HardDrives_FormFactorsHD">
+          <End Role="FormFactorsHD" Type="Self.FormFactorsHD" Multiplicity="0..1" />
+          <End Role="HardDrives" Type="Self.HardDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsHD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HardDrives">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HardDrives_HDMemoryType">
+          <End Role="HDMemoryType" Type="Self.HDMemoryType" Multiplicity="0..1" />
+          <End Role="HardDrives" Type="Self.HardDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDMemoryType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HardDrives">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HardDrives_Interfaces">
+          <End Role="Interfaces" Type="Self.Interfaces" Multiplicity="0..1" />
+          <End Role="HardDrives" Type="Self.HardDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HardDrives">
+              <PropertyRef Name="Interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_AudioChannels">
+          <End Role="AudioChannels" Type="Self.AudioChannels" Multiplicity="0..1" />
+          <End Role="Motherboards" Type="Self.Motherboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AudioChannels">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="AudioChannels" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_Chipsets">
+          <End Role="Chipsets" Type="Self.Chipsets" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chipsets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="Chipset" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_FormFactorsM">
+          <End Role="FormFactorsM" Type="Self.FormFactorsM" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="MemoryFormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_FormFactorsMB">
+          <End Role="FormFactorsMB" Type="Self.FormFactorsMB" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsMB">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_Interfaces">
+          <End Role="Interfaces" Type="Self.Interfaces" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="M2interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_MemoryTypes">
+          <End Role="MemoryTypes" Type="Self.MemoryTypes" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemoryTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_Sockets">
+          <End Role="Sockets" Type="Self.Sockets" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sockets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="Socket" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpticalDrives_DriveTypes">
+          <End Role="DriveTypes" Type="Self.DriveTypes" Multiplicity="1" />
+          <End Role="OpticalDrives" Type="Self.OpticalDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DriveTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OpticalDrives">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpticalDrives_FormFactorsD">
+          <End Role="FormFactorsD" Type="Self.FormFactorsD" Multiplicity="1" />
+          <End Role="OpticalDrives" Type="Self.OpticalDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OpticalDrives">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpticalDrives_Interfaces">
+          <End Role="Interfaces" Type="Self.Interfaces" Multiplicity="1" />
+          <End Role="OpticalDrives" Type="Self.OpticalDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OpticalDrives">
+              <PropertyRef Name="Interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PowerBlocks_FormFactorsPB">
+          <End Role="FormFactorsPB" Type="Self.FormFactorsPB" Multiplicity="0..1" />
+          <End Role="PowerBlocks" Type="Self.PowerBlocks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsPB">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PowerBlocks">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processors_CodeNames">
+          <End Role="CodeNames" Type="Self.CodeNames" Multiplicity="0..1" />
+          <End Role="Processors" Type="Self.Processors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodeNames">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Processors">
+              <PropertyRef Name="CodeName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processors_ProcessorSeries">
+          <End Role="ProcessorSeries" Type="Self.ProcessorSeries" Multiplicity="0..1" />
+          <End Role="Processors" Type="Self.Processors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProcessorSeries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Processors">
+              <PropertyRef Name="Series" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processors_Sockets">
+          <End Role="Sockets" Type="Self.Sockets" Multiplicity="0..1" />
+          <End Role="Processors" Type="Self.Processors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sockets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Processors">
+              <PropertyRef Name="Socket" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_FormFactorsM">
+          <End Role="FormFactorsM" Type="Self.FormFactorsM" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_MemoryTypes">
+          <End Role="MemoryTypes" Type="Self.MemoryTypes" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemoryTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SSDDrives_FormFactorsD">
+          <End Role="FormFactorsD" Type="Self.FormFactorsD" Multiplicity="0..1" />
+          <End Role="SSDDrives" Type="Self.SSDDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SSDDrives">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SSDDrives_FormFactorsHD">
+          <End Role="FormFactorsHD" Type="Self.FormFactorsHD" Multiplicity="0..1" />
+          <End Role="SSDDrives" Type="Self.SSDDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsHD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SSDDrives">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SSDDrives_HDMemoryType">
+          <End Role="HDMemoryType" Type="Self.HDMemoryType" Multiplicity="0..1" />
+          <End Role="SSDDrives" Type="Self.SSDDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDMemoryType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SSDDrives">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SSDDrives_Interfaces">
+          <End Role="Interfaces" Type="Self.Interfaces" Multiplicity="0..1" />
+          <End Role="SSDDrives" Type="Self.SSDDrives" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SSDDrives">
+              <PropertyRef Name="Interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videocards_DirectXVersions">
+          <End Role="DirectXVersions" Type="Self.DirectXVersions" Multiplicity="0..1" />
+          <End Role="Videocards" Type="Self.Videocards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DirectXVersions">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Videocards">
+              <PropertyRef Name="DirectX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videocards_GPUModels">
+          <End Role="GPUModels" Type="Self.GPUModels" Multiplicity="1" />
+          <End Role="Videocards" Type="Self.Videocards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GPUModels">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Videocards">
+              <PropertyRef Name="GPUModel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videocards_MemoryTypes">
+          <End Role="MemoryTypes" Type="Self.MemoryTypes" Multiplicity="1" />
+          <End Role="Videocards" Type="Self.Videocards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemoryTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Videocards">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videocards_OpenGLVersions">
+          <End Role="OpenGLVersions" Type="Self.OpenGLVersions" Multiplicity="0..1" />
+          <End Role="Videocards" Type="Self.Videocards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OpenGLVersions">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Videocards">
+              <PropertyRef Name="OpenGL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ModelsContainer">
+          <EntitySet Name="AudioCards" EntityType="Self.AudioCards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AudioCardTypes" EntityType="Self.AudioCardTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AudioChannels" EntityType="Self.AudioChannels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CasePlace" EntityType="Self.CasePlace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cases" EntityType="Self.Cases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Chipsets" EntityType="Self.Chipsets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CodeNames" EntityType="Self.CodeNames" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoolerCompatibility" EntityType="Self.CoolerCompatibility" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coolers" EntityType="Self.Coolers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoolerType" EntityType="Self.CoolerType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DirectXVersions" EntityType="Self.DirectXVersions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DriveTypes" EntityType="Self.DriveTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormFactorsC" EntityType="Self.FormFactorsC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormFactorsD" EntityType="Self.FormFactorsD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormFactorsHD" EntityType="Self.FormFactorsHD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormFactorsM" EntityType="Self.FormFactorsM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormFactorsMB" EntityType="Self.FormFactorsMB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormFactorsPB" EntityType="Self.FormFactorsPB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GPUModels" EntityType="Self.GPUModels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HardDrives" EntityType="Self.HardDrives" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HDMemoryType" EntityType="Self.HDMemoryType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Interfaces" EntityType="Self.Interfaces" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MemoryTypes" EntityType="Self.MemoryTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motherboards" EntityType="Self.Motherboards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OpenGLVersions" EntityType="Self.OpenGLVersions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OpticalDrives" EntityType="Self.OpticalDrives" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PowerBlocks" EntityType="Self.PowerBlocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Processors" EntityType="Self.Processors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProcessorSeries" EntityType="Self.ProcessorSeries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAM" EntityType="Self.RAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sockets" EntityType="Self.Sockets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SSDDrives" EntityType="Self.SSDDrives" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Videocards" EntityType="Self.Videocards" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AudioCards_AudioCardTypes" Association="Self.FK_AudioCards_AudioCardTypes">
+            <End Role="AudioCardTypes" EntitySet="AudioCardTypes" />
+            <End Role="AudioCards" EntitySet="AudioCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AudioCards_AudioChannels" Association="Self.FK_AudioCards_AudioChannels">
+            <End Role="AudioChannels" EntitySet="AudioChannels" />
+            <End Role="AudioCards" EntitySet="AudioCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AudioCards_Interfaces" Association="Self.FK_AudioCards_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="AudioCards" EntitySet="AudioCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_CasePlace" Association="Self.FK_Cases_CasePlace">
+            <End Role="CasePlace" EntitySet="CasePlace" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_FormFactorsC" Association="Self.FK_Cases_FormFactorsC">
+            <End Role="FormFactorsC" EntitySet="FormFactorsC" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_FormFactorsMB" Association="Self.FK_Cases_FormFactorsMB">
+            <End Role="FormFactorsMB" EntitySet="FormFactorsMB" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoolerCompatibility_Coolers" Association="Self.FK_CoolerCompatibility_Coolers">
+            <End Role="Coolers" EntitySet="Coolers" />
+            <End Role="CoolerCompatibility" EntitySet="CoolerCompatibility" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoolerCompatibility_Sockets" Association="Self.FK_CoolerCompatibility_Sockets">
+            <End Role="Sockets" EntitySet="Sockets" />
+            <End Role="CoolerCompatibility" EntitySet="CoolerCompatibility" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coolers_CoolerType" Association="Self.FK_Coolers_CoolerType">
+            <End Role="CoolerType" EntitySet="CoolerType" />
+            <End Role="Coolers" EntitySet="Coolers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HardDrives_FormFactorsD" Association="Self.FK_HardDrives_FormFactorsD">
+            <End Role="FormFactorsD" EntitySet="FormFactorsD" />
+            <End Role="HardDrives" EntitySet="HardDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HardDrives_FormFactorsHD" Association="Self.FK_HardDrives_FormFactorsHD">
+            <End Role="FormFactorsHD" EntitySet="FormFactorsHD" />
+            <End Role="HardDrives" EntitySet="HardDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HardDrives_HDMemoryType" Association="Self.FK_HardDrives_HDMemoryType">
+            <End Role="HDMemoryType" EntitySet="HDMemoryType" />
+            <End Role="HardDrives" EntitySet="HardDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HardDrives_Interfaces" Association="Self.FK_HardDrives_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="HardDrives" EntitySet="HardDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_AudioChannels" Association="Self.FK_Motherboards_AudioChannels">
+            <End Role="AudioChannels" EntitySet="AudioChannels" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_Chipsets" Association="Self.FK_Motherboards_Chipsets">
+            <End Role="Chipsets" EntitySet="Chipsets" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_FormFactorsM" Association="Self.FK_Motherboards_FormFactorsM">
+            <End Role="FormFactorsM" EntitySet="FormFactorsM" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_FormFactorsMB" Association="Self.FK_Motherboards_FormFactorsMB">
+            <End Role="FormFactorsMB" EntitySet="FormFactorsMB" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_Interfaces" Association="Self.FK_Motherboards_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_MemoryTypes" Association="Self.FK_Motherboards_MemoryTypes">
+            <End Role="MemoryTypes" EntitySet="MemoryTypes" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_Sockets" Association="Self.FK_Motherboards_Sockets">
+            <End Role="Sockets" EntitySet="Sockets" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpticalDrives_DriveTypes" Association="Self.FK_OpticalDrives_DriveTypes">
+            <End Role="DriveTypes" EntitySet="DriveTypes" />
+            <End Role="OpticalDrives" EntitySet="OpticalDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpticalDrives_FormFactorsD" Association="Self.FK_OpticalDrives_FormFactorsD">
+            <End Role="FormFactorsD" EntitySet="FormFactorsD" />
+            <End Role="OpticalDrives" EntitySet="OpticalDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpticalDrives_Interfaces" Association="Self.FK_OpticalDrives_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="OpticalDrives" EntitySet="OpticalDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PowerBlocks_FormFactorsPB" Association="Self.FK_PowerBlocks_FormFactorsPB">
+            <End Role="FormFactorsPB" EntitySet="FormFactorsPB" />
+            <End Role="PowerBlocks" EntitySet="PowerBlocks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processors_CodeNames" Association="Self.FK_Processors_CodeNames">
+            <End Role="CodeNames" EntitySet="CodeNames" />
+            <End Role="Processors" EntitySet="Processors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processors_ProcessorSeries" Association="Self.FK_Processors_ProcessorSeries">
+            <End Role="ProcessorSeries" EntitySet="ProcessorSeries" />
+            <End Role="Processors" EntitySet="Processors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processors_Sockets" Association="Self.FK_Processors_Sockets">
+            <End Role="Sockets" EntitySet="Sockets" />
+            <End Role="Processors" EntitySet="Processors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_FormFactorsM" Association="Self.FK_RAM_FormFactorsM">
+            <End Role="FormFactorsM" EntitySet="FormFactorsM" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_MemoryTypes" Association="Self.FK_RAM_MemoryTypes">
+            <End Role="MemoryTypes" EntitySet="MemoryTypes" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SSDDrives_FormFactorsD" Association="Self.FK_SSDDrives_FormFactorsD">
+            <End Role="FormFactorsD" EntitySet="FormFactorsD" />
+            <End Role="SSDDrives" EntitySet="SSDDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SSDDrives_FormFactorsHD" Association="Self.FK_SSDDrives_FormFactorsHD">
+            <End Role="FormFactorsHD" EntitySet="FormFactorsHD" />
+            <End Role="SSDDrives" EntitySet="SSDDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SSDDrives_HDMemoryType" Association="Self.FK_SSDDrives_HDMemoryType">
+            <End Role="HDMemoryType" EntitySet="HDMemoryType" />
+            <End Role="SSDDrives" EntitySet="SSDDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SSDDrives_Interfaces" Association="Self.FK_SSDDrives_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="SSDDrives" EntitySet="SSDDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videocards_DirectXVersions" Association="Self.FK_Videocards_DirectXVersions">
+            <End Role="DirectXVersions" EntitySet="DirectXVersions" />
+            <End Role="Videocards" EntitySet="Videocards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videocards_GPUModels" Association="Self.FK_Videocards_GPUModels">
+            <End Role="GPUModels" EntitySet="GPUModels" />
+            <End Role="Videocards" EntitySet="Videocards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videocards_MemoryTypes" Association="Self.FK_Videocards_MemoryTypes">
+            <End Role="MemoryTypes" EntitySet="MemoryTypes" />
+            <End Role="Videocards" EntitySet="Videocards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videocards_OpenGLVersions" Association="Self.FK_Videocards_OpenGLVersions">
+            <End Role="OpenGLVersions" EntitySet="OpenGLVersions" />
+            <End Role="Videocards" EntitySet="Videocards" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AudioCard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="Int16" />
+          <Property Name="Interface" Type="Int16" />
+          <Property Name="AudioChannels" Type="Int16" />
+          <NavigationProperty Name="AudioCardType" Relationship="Self.FK_AudioCards_AudioCardTypes" FromRole="AudioCards" ToRole="AudioCardTypes" />
+          <NavigationProperty Name="AudioChannel" Relationship="Self.FK_AudioCards_AudioChannels" FromRole="AudioCards" ToRole="AudioChannels" />
+          <NavigationProperty Name="Interface1" Relationship="Self.FK_AudioCards_Interfaces" FromRole="AudioCards" ToRole="Interfaces" />
+        </EntityType>
+        <EntityType Name="AudioCardType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AudioCards" Relationship="Self.FK_AudioCards_AudioCardTypes" FromRole="AudioCardTypes" ToRole="AudioCards" />
+        </EntityType>
+        <EntityType Name="AudioChannel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AudioCards" Relationship="Self.FK_AudioCards_AudioChannels" FromRole="AudioChannels" ToRole="AudioCards" />
+          <NavigationProperty Name="Motherboards" Relationship="Self.FK_Motherboards_AudioChannels" FromRole="AudioChannels" ToRole="Motherboards" />
+        </EntityType>
+        <EntityType Name="CasePlace">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Cases" Relationship="Self.FK_Cases_CasePlace" FromRole="CasePlace" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="Case">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Place" Type="Int16" />
+          <Property Name="FormFactor" Type="Int16" />
+          <Property Name="MBtype" Type="Int16" Nullable="false" />
+          <Property Name="PowerBlock" Type="Byte" />
+          <Property Name="Count525" Type="Byte" />
+          <Property Name="Count35" Type="Byte" />
+          <Property Name="Count25" Type="Byte" />
+          <Property Name="ExpantionSlots" Type="Byte" />
+          <Property Name="Fans" Type="Byte" />
+          <Property Name="FanPlaces" Type="Byte" />
+          <NavigationProperty Name="CasePlace" Relationship="Self.FK_Cases_CasePlace" FromRole="Cases" ToRole="CasePlace" />
+          <NavigationProperty Name="FormFactorsC" Relationship="Self.FK_Cases_FormFactorsC" FromRole="Cases" ToRole="FormFactorsC" />
+          <NavigationProperty Name="FormFactorsMB" Relationship="Self.FK_Cases_FormFactorsMB" FromRole="Cases" ToRole="FormFactorsMB" />
+        </EntityType>
+        <EntityType Name="Chipset">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Motherboards" Relationship="Self.FK_Motherboards_Chipsets" FromRole="Chipsets" ToRole="Motherboards" />
+        </EntityType>
+        <EntityType Name="CodeName">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Processors" Relationship="Self.FK_Processors_CodeNames" FromRole="CodeNames" ToRole="Processors" />
+        </EntityType>
+        <EntityType Name="CoolerCompatibility">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="CoolerID" Type="Int16" />
+          <Property Name="SocketID" Type="Int16" />
+          <NavigationProperty Name="Cooler" Relationship="Self.FK_CoolerCompatibility_Coolers" FromRole="CoolerCompatibility" ToRole="Coolers" />
+          <NavigationProperty Name="Socket" Relationship="Self.FK_CoolerCompatibility_Sockets" FromRole="CoolerCompatibility" ToRole="Sockets" />
+        </EntityType>
+        <EntityType Name="Cooler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="Int16" Nullable="false" />
+          <Property Name="Material" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FanDiameter" Type="Byte" />
+          <Property Name="FanSpeed" Type="Int16" />
+          <Property Name="Height" Type="Int16" />
+          <NavigationProperty Name="CoolerCompatibilities" Relationship="Self.FK_CoolerCompatibility_Coolers" FromRole="Coolers" ToRole="CoolerCompatibility" />
+          <NavigationProperty Name="CoolerType" Relationship="Self.FK_Coolers_CoolerType" FromRole="Coolers" ToRole="CoolerType" />
+        </EntityType>
+        <EntityType Name="CoolerType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Coolers" Relationship="Self.FK_Coolers_CoolerType" FromRole="CoolerType" ToRole="Coolers" />
+        </EntityType>
+        <EntityType Name="DirectXVersion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Videocards" Relationship="Self.FK_Videocards_DirectXVersions" FromRole="DirectXVersions" ToRole="Videocards" />
+        </EntityType>
+        <EntityType Name="DriveType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OpticalDrives" Relationship="Self.FK_OpticalDrives_DriveTypes" FromRole="DriveTypes" ToRole="OpticalDrives" />
+        </EntityType>
+        <EntityType Name="FormFactorsC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Cases" Relationship="Self.FK_Cases_FormFactorsC" FromRole="FormFactorsC" ToRole="Cases" />
+        </EntityType>
+        <EntityType Name="FormFactorsD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HardDrives" Relationship="Self.FK_HardDrives_FormFactorsD" FromRole="FormFactorsD" ToRole="HardDrives" />
+          <NavigationProperty Name="OpticalDrives" Relationship="Self.FK_OpticalDrives_FormFactorsD" FromRole="FormFactorsD" ToRole="OpticalDrives" />
+          <NavigationProperty Name="SSDDrives" Relationship="Self.FK_SSDDrives_FormFactorsD" FromRole="FormFactorsD" ToRole="SSDDrives" />
+        </EntityType>
+        <EntityType Name="FormFactorsHD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HardDrives" Relationship="Self.FK_HardDrives_FormFactorsHD" FromRole="FormFactorsHD" ToRole="HardDrives" />
+          <NavigationProperty Name="SSDDrives" Relationship="Self.FK_SSDDrives_FormFactorsHD" FromRole="FormFactorsHD" ToRole="SSDDrives" />
+        </EntityType>
+        <EntityType Name="FormFactorsM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Motherboards" Relationship="Self.FK_Motherboards_FormFactorsM" FromRole="FormFactorsM" ToRole="Motherboards" />
+          <NavigationProperty Name="RAMs" Relationship="Self.FK_RAM_FormFactorsM" FromRole="FormFactorsM" ToRole="RAM" />
+        </EntityType>
+        <EntityType Name="FormFactorsMB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cases" Relationship="Self.FK_Cases_FormFactorsMB" FromRole="FormFactorsMB" ToRole="Cases" />
+          <NavigationProperty Name="Motherboards" Relationship="Self.FK_Motherboards_FormFactorsMB" FromRole="FormFactorsMB" ToRole="Motherboards" />
+        </EntityType>
+        <EntityType Name="FormFactorsPB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PowerBlocks" Relationship="Self.FK_PowerBlocks_FormFactorsPB" FromRole="FormFactorsPB" ToRole="PowerBlocks" />
+        </EntityType>
+        <EntityType Name="GPUModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Videocards" Relationship="Self.FK_Videocards_GPUModels" FromRole="GPUModels" ToRole="Videocards" />
+        </EntityType>
+        <EntityType Name="HardDrive">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="Int16" />
+          <Property Name="MemoryType" Type="Int16" />
+          <Property Name="Interface" Type="Int16" />
+          <Property Name="Capacity" Type="Byte" />
+          <Property Name="FormFactor" Type="Int16" />
+          <Property Name="BuferCapacity" Type="Byte" />
+          <Property Name="Speed" Type="Byte" />
+          <NavigationProperty Name="FormFactorsD" Relationship="Self.FK_HardDrives_FormFactorsD" FromRole="HardDrives" ToRole="FormFactorsD" />
+          <NavigationProperty Name="FormFactorsHD" Relationship="Self.FK_HardDrives_FormFactorsHD" FromRole="HardDrives" ToRole="FormFactorsHD" />
+          <NavigationProperty Name="HDMemoryType" Relationship="Self.FK_HardDrives_HDMemoryType" FromRole="HardDrives" ToRole="HDMemoryType" />
+          <NavigationProperty Name="Interface1" Relationship="Self.FK_HardDrives_Interfaces" FromRole="HardDrives" ToRole="Interfaces" />
+        </EntityType>
+        <EntityType Name="HDMemoryType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HardDrives" Relationship="Self.FK_HardDrives_HDMemoryType" FromRole="HDMemoryType" ToRole="HardDrives" />
+          <NavigationProperty Name="SSDDrives" Relationship="Self.FK_SSDDrives_HDMemoryType" FromRole="HDMemoryType" ToRole="SSDDrives" />
+        </EntityType>
+        <EntityType Name="Interface">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AudioCards" Relationship="Self.FK_AudioCards_Interfaces" FromRole="Interfaces" ToRole="AudioCards" />
+          <NavigationProperty Name="HardDrives" Relationship="Self.FK_HardDrives_Interfaces" FromRole="Interfaces" ToRole="HardDrives" />
+          <NavigationProperty Name="Motherboards" Relationship="Self.FK_Motherboards_Interfaces" FromRole="Interfaces" ToRole="Motherboards" />
+          <NavigationProperty Name="OpticalDrives" Relationship="Self.FK_OpticalDrives_Interfaces" FromRole="Interfaces" ToRole="OpticalDrives" />
+          <NavigationProperty Name="SSDDrives" Relationship="Self.FK_SSDDrives_Interfaces" FromRole="Interfaces" ToRole="SSDDrives" />
+        </EntityType>
+        <EntityType Name="MemoryType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Motherboards" Relationship="Self.FK_Motherboards_MemoryTypes" FromRole="MemoryTypes" ToRole="Motherboards" />
+          <NavigationProperty Name="RAMs" Relationship="Self.FK_RAM_MemoryTypes" FromRole="MemoryTypes" ToRole="RAM" />
+          <NavigationProperty Name="Videocards" Relationship="Self.FK_Videocards_MemoryTypes" FromRole="MemoryTypes" ToRole="Videocards" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Socket" Type="Int16" Nullable="false" />
+          <Property Name="FormFactor" Type="Int16" Nullable="false" />
+          <Property Name="Chipset" Type="Int16" Nullable="false" />
+          <Property Name="MemoryType" Type="Int16" Nullable="false" />
+          <Property Name="MemoryFormFactor" Type="Int16" Nullable="false" />
+          <Property Name="MemoryChannels" Type="Int16" Nullable="false" />
+          <Property Name="MaxFrequency" Type="Int32" />
+          <Property Name="MaxCapacity" Type="Int32" />
+          <Property Name="AudioChip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AudioChannels" Type="Int16" />
+          <Property Name="SATA3" Type="Byte" Nullable="false" />
+          <Property Name="M2connector" Type="Byte" Nullable="false" />
+          <Property Name="M2interface" Type="Int16" Nullable="false" />
+          <Property Name="PCIE1xSlots" Type="Byte" Nullable="false" />
+          <Property Name="PCIE16xSlots" Type="Byte" Nullable="false" />
+          <Property Name="PCIE30" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AudioChannel" Relationship="Self.FK_Motherboards_AudioChannels" FromRole="Motherboards" ToRole="AudioChannels" />
+          <NavigationProperty Name="Chipset1" Relationship="Self.FK_Motherboards_Chipsets" FromRole="Motherboards" ToRole="Chipsets" />
+          <NavigationProperty Name="FormFactorsM" Relationship="Self.FK_Motherboards_FormFactorsM" FromRole="Motherboards" ToRole="FormFactorsM" />
+          <NavigationProperty Name="FormFactorsMB" Relationship="Self.FK_Motherboards_FormFactorsMB" FromRole="Motherboards" ToRole="FormFactorsMB" />
+          <NavigationProperty Name="Interface" Relationship="Self.FK_Motherboards_Interfaces" FromRole="Motherboards" ToRole="Interfaces" />
+          <NavigationProperty Name="MemoryType1" Relationship="Self.FK_Motherboards_MemoryTypes" FromRole="Motherboards" ToRole="MemoryTypes" />
+          <NavigationProperty Name="Socket1" Relationship="Self.FK_Motherboards_Sockets" FromRole="Motherboards" ToRole="Sockets" />
+        </EntityType>
+        <EntityType Name="OpenGLVersion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Videocards" Relationship="Self.FK_Videocards_OpenGLVersions" FromRole="OpenGLVersions" ToRole="Videocards" />
+        </EntityType>
+        <EntityType Name="OpticalDrive">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="Int16" Nullable="false" />
+          <Property Name="FormFactor" Type="Int16" Nullable="false" />
+          <Property Name="Interface" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="DriveType" Relationship="Self.FK_OpticalDrives_DriveTypes" FromRole="OpticalDrives" ToRole="DriveTypes" />
+          <NavigationProperty Name="FormFactorsD" Relationship="Self.FK_OpticalDrives_FormFactorsD" FromRole="OpticalDrives" ToRole="FormFactorsD" />
+          <NavigationProperty Name="Interface1" Relationship="Self.FK_OpticalDrives_Interfaces" FromRole="OpticalDrives" ToRole="Interfaces" />
+        </EntityType>
+        <EntityType Name="PowerBlock">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Power" Type="Byte" Nullable="false" />
+          <Property Name="FormFactor" Type="Int16" />
+          <Property Name="Sercificate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SATAPower" Type="Byte" />
+          <Property Name="MolexPower" Type="Byte" />
+          <Property Name="PCIE8pinPower" Type="Byte" />
+          <NavigationProperty Name="FormFactorsPB" Relationship="Self.FK_PowerBlocks_FormFactorsPB" FromRole="PowerBlocks" ToRole="FormFactorsPB" />
+        </EntityType>
+        <EntityType Name="Processor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Series" Type="Int16" />
+          <Property Name="CodeName" Type="Int16" />
+          <Property Name="Socket" Type="Int16" />
+          <Property Name="Cores" Type="Byte" />
+          <Property Name="CoreFrequency" Type="Int16" />
+          <Property Name="TurboBoost" Type="Int16" />
+          <Property Name="TechProcess" Type="Byte" />
+          <Property Name="L1" Type="Int16" />
+          <Property Name="L2" Type="Int16" />
+          <Property Name="L3" Type="Int16" />
+          <Property Name="TDP" Type="Byte" />
+          <Property Name="Multiplier" Type="Boolean" />
+          <NavigationProperty Name="CodeName1" Relationship="Self.FK_Processors_CodeNames" FromRole="Processors" ToRole="CodeNames" />
+          <NavigationProperty Name="ProcessorSery" Relationship="Self.FK_Processors_ProcessorSeries" FromRole="Processors" ToRole="ProcessorSeries" />
+          <NavigationProperty Name="Socket1" Relationship="Self.FK_Processors_Sockets" FromRole="Processors" ToRole="Sockets" />
+        </EntityType>
+        <EntityType Name="ProcessorSery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Processors" Relationship="Self.FK_Processors_ProcessorSeries" FromRole="ProcessorSeries" ToRole="Processors" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Capacity" Type="Byte" Nullable="false" />
+          <Property Name="PlanksCount" Type="Byte" Nullable="false" />
+          <Property Name="MemoryType" Type="Int16" Nullable="false" />
+          <Property Name="FormFactor" Type="Int16" Nullable="false" />
+          <Property Name="Frequency" Type="Int16" />
+          <Property Name="Speed" Type="Byte" />
+          <Property Name="Timing1" Type="Byte" />
+          <Property Name="Timing2" Type="Byte" />
+          <Property Name="Timing3" Type="Byte" />
+          <Property Name="Timing4" Type="Byte" />
+          <NavigationProperty Name="FormFactorsM" Relationship="Self.FK_RAM_FormFactorsM" FromRole="RAM" ToRole="FormFactorsM" />
+          <NavigationProperty Name="MemoryType1" Relationship="Self.FK_RAM_MemoryTypes" FromRole="RAM" ToRole="MemoryTypes" />
+        </EntityType>
+        <EntityType Name="Socket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CoolerCompatibilities" Relationship="Self.FK_CoolerCompatibility_Sockets" FromRole="Sockets" ToRole="CoolerCompatibility" />
+          <NavigationProperty Name="Motherboards" Relationship="Self.FK_Motherboards_Sockets" FromRole="Sockets" ToRole="Motherboards" />
+          <NavigationProperty Name="Processors" Relationship="Self.FK_Processors_Sockets" FromRole="Sockets" ToRole="Processors" />
+        </EntityType>
+        <EntityType Name="SSDDrive">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="Int16" />
+          <Property Name="Capacity" Type="Byte" />
+          <Property Name="MemoryType" Type="Int16" />
+          <Property Name="FormFactor" Type="Int16" />
+          <Property Name="Interface" Type="Int16" />
+          <Property Name="BuferCapacity" Type="Byte" />
+          <Property Name="SpeedWrite" Type="Byte" />
+          <Property Name="SpeedRead" Type="Byte" />
+          <NavigationProperty Name="FormFactorsD" Relationship="Self.FK_SSDDrives_FormFactorsD" FromRole="SSDDrives" ToRole="FormFactorsD" />
+          <NavigationProperty Name="FormFactorsHD" Relationship="Self.FK_SSDDrives_FormFactorsHD" FromRole="SSDDrives" ToRole="FormFactorsHD" />
+          <NavigationProperty Name="HDMemoryType" Relationship="Self.FK_SSDDrives_HDMemoryType" FromRole="SSDDrives" ToRole="HDMemoryType" />
+          <NavigationProperty Name="Interface1" Relationship="Self.FK_SSDDrives_Interfaces" FromRole="SSDDrives" ToRole="Interfaces" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Videocard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GPUModel" Type="Int16" Nullable="false" />
+          <Property Name="MemoryCapacity" Type="Byte" Nullable="false" />
+          <Property Name="MemoryType" Type="Int16" Nullable="false" />
+          <Property Name="BusWidth" Type="Int16" />
+          <Property Name="GPUFrequency" Type="Int16" Nullable="false" />
+          <Property Name="MemoryFrequency" Type="Int16" Nullable="false" />
+          <Property Name="Techprocess" Type="Byte" />
+          <Property Name="MaxResolution" Type="Int32" Nullable="false" />
+          <Property Name="HDMI" Type="Byte" Nullable="false" />
+          <Property Name="DisplayPort" Type="Byte" Nullable="false" />
+          <Property Name="DirectX" Type="Int16" />
+          <Property Name="OpenGL" Type="Int16" />
+          <Property Name="RecPB" Type="Byte" Nullable="false" />
+          <Property Name="ExpantionSlots" Type="Byte" Nullable="false" />
+          <Property Name="Length" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="DirectXVersion" Relationship="Self.FK_Videocards_DirectXVersions" FromRole="Videocards" ToRole="DirectXVersions" />
+          <NavigationProperty Name="GPUModel1" Relationship="Self.FK_Videocards_GPUModels" FromRole="Videocards" ToRole="GPUModels" />
+          <NavigationProperty Name="MemoryType1" Relationship="Self.FK_Videocards_MemoryTypes" FromRole="Videocards" ToRole="MemoryTypes" />
+          <NavigationProperty Name="OpenGLVersion" Relationship="Self.FK_Videocards_OpenGLVersions" FromRole="Videocards" ToRole="OpenGLVersions" />
+        </EntityType>
+        <Association Name="FK_AudioCards_AudioCardTypes">
+          <End Role="AudioCardTypes" Type="Self.AudioCardType" Multiplicity="0..1" />
+          <End Role="AudioCards" Type="Self.AudioCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AudioCardTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioCards">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AudioCards_AudioChannels">
+          <End Role="AudioChannels" Type="Self.AudioChannel" Multiplicity="0..1" />
+          <End Role="AudioCards" Type="Self.AudioCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AudioChannels">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioCards">
+              <PropertyRef Name="AudioChannels" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AudioCards_Interfaces">
+          <End Role="Interfaces" Type="Self.Interface" Multiplicity="0..1" />
+          <End Role="AudioCards" Type="Self.AudioCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioCards">
+              <PropertyRef Name="Interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_AudioChannels">
+          <End Role="AudioChannels" Type="Self.AudioChannel" Multiplicity="0..1" />
+          <End Role="Motherboards" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AudioChannels">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="AudioChannels" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_CasePlace">
+          <End Role="CasePlace" Type="Self.CasePlace" Multiplicity="0..1" />
+          <End Role="Cases" Type="Self.Case" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CasePlace">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="Place" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_FormFactorsC">
+          <End Role="FormFactorsC" Type="Self.FormFactorsC" Multiplicity="0..1" />
+          <End Role="Cases" Type="Self.Case" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsC">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cases_FormFactorsMB">
+          <End Role="FormFactorsMB" Type="Self.FormFactorsMB" Multiplicity="1" />
+          <End Role="Cases" Type="Self.Case" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsMB">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cases">
+              <PropertyRef Name="MBtype" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_Chipsets">
+          <End Role="Chipsets" Type="Self.Chipset" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chipsets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="Chipset" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processors_CodeNames">
+          <End Role="CodeNames" Type="Self.CodeName" Multiplicity="0..1" />
+          <End Role="Processors" Type="Self.Processor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodeNames">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Processors">
+              <PropertyRef Name="CodeName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoolerCompatibility_Coolers">
+          <End Role="Coolers" Type="Self.Cooler" Multiplicity="0..1" />
+          <End Role="CoolerCompatibility" Type="Self.CoolerCompatibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coolers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CoolerCompatibility">
+              <PropertyRef Name="CoolerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoolerCompatibility_Sockets">
+          <End Role="Sockets" Type="Self.Socket" Multiplicity="0..1" />
+          <End Role="CoolerCompatibility" Type="Self.CoolerCompatibility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sockets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CoolerCompatibility">
+              <PropertyRef Name="SocketID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Coolers_CoolerType">
+          <End Role="CoolerType" Type="Self.CoolerType" Multiplicity="1" />
+          <End Role="Coolers" Type="Self.Cooler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoolerType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Coolers">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videocards_DirectXVersions">
+          <End Role="DirectXVersions" Type="Self.DirectXVersion" Multiplicity="0..1" />
+          <End Role="Videocards" Type="Self.Videocard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DirectXVersions">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Videocards">
+              <PropertyRef Name="DirectX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpticalDrives_DriveTypes">
+          <End Role="DriveTypes" Type="Self.DriveType" Multiplicity="1" />
+          <End Role="OpticalDrives" Type="Self.OpticalDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DriveTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OpticalDrives">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HardDrives_FormFactorsD">
+          <End Role="FormFactorsD" Type="Self.FormFactorsD" Multiplicity="0..1" />
+          <End Role="HardDrives" Type="Self.HardDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HardDrives">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpticalDrives_FormFactorsD">
+          <End Role="FormFactorsD" Type="Self.FormFactorsD" Multiplicity="1" />
+          <End Role="OpticalDrives" Type="Self.OpticalDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OpticalDrives">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SSDDrives_FormFactorsD">
+          <End Role="FormFactorsD" Type="Self.FormFactorsD" Multiplicity="0..1" />
+          <End Role="SSDDrives" Type="Self.SSDDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SSDDrives">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HardDrives_FormFactorsHD">
+          <End Role="FormFactorsHD" Type="Self.FormFactorsHD" Multiplicity="0..1" />
+          <End Role="HardDrives" Type="Self.HardDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsHD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HardDrives">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SSDDrives_FormFactorsHD">
+          <End Role="FormFactorsHD" Type="Self.FormFactorsHD" Multiplicity="0..1" />
+          <End Role="SSDDrives" Type="Self.SSDDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsHD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SSDDrives">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_FormFactorsM">
+          <End Role="FormFactorsM" Type="Self.FormFactorsM" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="MemoryFormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_FormFactorsM">
+          <End Role="FormFactorsM" Type="Self.FormFactorsM" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsM">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_FormFactorsMB">
+          <End Role="FormFactorsMB" Type="Self.FormFactorsMB" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsMB">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PowerBlocks_FormFactorsPB">
+          <End Role="FormFactorsPB" Type="Self.FormFactorsPB" Multiplicity="0..1" />
+          <End Role="PowerBlocks" Type="Self.PowerBlock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormFactorsPB">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PowerBlocks">
+              <PropertyRef Name="FormFactor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videocards_GPUModels">
+          <End Role="GPUModels" Type="Self.GPUModel" Multiplicity="1" />
+          <End Role="Videocards" Type="Self.Videocard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GPUModels">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Videocards">
+              <PropertyRef Name="GPUModel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HardDrives_HDMemoryType">
+          <End Role="HDMemoryType" Type="Self.HDMemoryType" Multiplicity="0..1" />
+          <End Role="HardDrives" Type="Self.HardDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDMemoryType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HardDrives">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HardDrives_Interfaces">
+          <End Role="Interfaces" Type="Self.Interface" Multiplicity="0..1" />
+          <End Role="HardDrives" Type="Self.HardDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HardDrives">
+              <PropertyRef Name="Interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SSDDrives_HDMemoryType">
+          <End Role="HDMemoryType" Type="Self.HDMemoryType" Multiplicity="0..1" />
+          <End Role="SSDDrives" Type="Self.SSDDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDMemoryType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SSDDrives">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_Interfaces">
+          <End Role="Interfaces" Type="Self.Interface" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="M2interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OpticalDrives_Interfaces">
+          <End Role="Interfaces" Type="Self.Interface" Multiplicity="1" />
+          <End Role="OpticalDrives" Type="Self.OpticalDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OpticalDrives">
+              <PropertyRef Name="Interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SSDDrives_Interfaces">
+          <End Role="Interfaces" Type="Self.Interface" Multiplicity="0..1" />
+          <End Role="SSDDrives" Type="Self.SSDDrive" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interfaces">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SSDDrives">
+              <PropertyRef Name="Interface" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_MemoryTypes">
+          <End Role="MemoryTypes" Type="Self.MemoryType" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemoryTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_MemoryTypes">
+          <End Role="MemoryTypes" Type="Self.MemoryType" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemoryTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videocards_MemoryTypes">
+          <End Role="MemoryTypes" Type="Self.MemoryType" Multiplicity="1" />
+          <End Role="Videocards" Type="Self.Videocard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MemoryTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Videocards">
+              <PropertyRef Name="MemoryType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboards_Sockets">
+          <End Role="Sockets" Type="Self.Socket" Multiplicity="1" />
+          <End Role="Motherboards" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sockets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboards">
+              <PropertyRef Name="Socket" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videocards_OpenGLVersions">
+          <End Role="OpenGLVersions" Type="Self.OpenGLVersion" Multiplicity="0..1" />
+          <End Role="Videocards" Type="Self.Videocard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OpenGLVersions">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Videocards">
+              <PropertyRef Name="OpenGL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processors_ProcessorSeries">
+          <End Role="ProcessorSeries" Type="Self.ProcessorSery" Multiplicity="0..1" />
+          <End Role="Processors" Type="Self.Processor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProcessorSeries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Processors">
+              <PropertyRef Name="Series" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processors_Sockets">
+          <End Role="Sockets" Type="Self.Socket" Multiplicity="0..1" />
+          <End Role="Processors" Type="Self.Processor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sockets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Processors">
+              <PropertyRef Name="Socket" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ComponentsPC" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AudioCards" EntityType="Self.AudioCard" />
+          <EntitySet Name="AudioCardTypes" EntityType="Self.AudioCardType" />
+          <EntitySet Name="AudioChannels" EntityType="Self.AudioChannel" />
+          <EntitySet Name="CasePlaces" EntityType="Self.CasePlace" />
+          <EntitySet Name="Cases" EntityType="Self.Case" />
+          <EntitySet Name="Chipsets" EntityType="Self.Chipset" />
+          <EntitySet Name="CodeNames" EntityType="Self.CodeName" />
+          <EntitySet Name="CoolerCompatibilities" EntityType="Self.CoolerCompatibility" />
+          <EntitySet Name="Coolers" EntityType="Self.Cooler" />
+          <EntitySet Name="CoolerTypes" EntityType="Self.CoolerType" />
+          <EntitySet Name="DirectXVersions" EntityType="Self.DirectXVersion" />
+          <EntitySet Name="DriveTypes" EntityType="Self.DriveType" />
+          <EntitySet Name="FormFactorsCs" EntityType="Self.FormFactorsC" />
+          <EntitySet Name="FormFactorsDs" EntityType="Self.FormFactorsD" />
+          <EntitySet Name="FormFactorsHDs" EntityType="Self.FormFactorsHD" />
+          <EntitySet Name="FormFactorsMs" EntityType="Self.FormFactorsM" />
+          <EntitySet Name="FormFactorsMBs" EntityType="Self.FormFactorsMB" />
+          <EntitySet Name="FormFactorsPBs" EntityType="Self.FormFactorsPB" />
+          <EntitySet Name="GPUModels" EntityType="Self.GPUModel" />
+          <EntitySet Name="HardDrives" EntityType="Self.HardDrive" />
+          <EntitySet Name="HDMemoryTypes" EntityType="Self.HDMemoryType" />
+          <EntitySet Name="Interfaces" EntityType="Self.Interface" />
+          <EntitySet Name="MemoryTypes" EntityType="Self.MemoryType" />
+          <EntitySet Name="Motherboards" EntityType="Self.Motherboard" />
+          <EntitySet Name="OpenGLVersions" EntityType="Self.OpenGLVersion" />
+          <EntitySet Name="OpticalDrives" EntityType="Self.OpticalDrive" />
+          <EntitySet Name="PowerBlocks" EntityType="Self.PowerBlock" />
+          <EntitySet Name="Processors" EntityType="Self.Processor" />
+          <EntitySet Name="ProcessorSeries" EntityType="Self.ProcessorSery" />
+          <EntitySet Name="RAMs" EntityType="Self.RAM" />
+          <EntitySet Name="Sockets" EntityType="Self.Socket" />
+          <EntitySet Name="SSDDrives" EntityType="Self.SSDDrive" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Videocards" EntityType="Self.Videocard" />
+          <AssociationSet Name="FK_AudioCards_AudioCardTypes" Association="Self.FK_AudioCards_AudioCardTypes">
+            <End Role="AudioCardTypes" EntitySet="AudioCardTypes" />
+            <End Role="AudioCards" EntitySet="AudioCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AudioCards_AudioChannels" Association="Self.FK_AudioCards_AudioChannels">
+            <End Role="AudioChannels" EntitySet="AudioChannels" />
+            <End Role="AudioCards" EntitySet="AudioCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AudioCards_Interfaces" Association="Self.FK_AudioCards_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="AudioCards" EntitySet="AudioCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_AudioChannels" Association="Self.FK_Motherboards_AudioChannels">
+            <End Role="AudioChannels" EntitySet="AudioChannels" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_CasePlace" Association="Self.FK_Cases_CasePlace">
+            <End Role="CasePlace" EntitySet="CasePlaces" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_FormFactorsC" Association="Self.FK_Cases_FormFactorsC">
+            <End Role="FormFactorsC" EntitySet="FormFactorsCs" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cases_FormFactorsMB" Association="Self.FK_Cases_FormFactorsMB">
+            <End Role="FormFactorsMB" EntitySet="FormFactorsMBs" />
+            <End Role="Cases" EntitySet="Cases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_Chipsets" Association="Self.FK_Motherboards_Chipsets">
+            <End Role="Chipsets" EntitySet="Chipsets" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processors_CodeNames" Association="Self.FK_Processors_CodeNames">
+            <End Role="CodeNames" EntitySet="CodeNames" />
+            <End Role="Processors" EntitySet="Processors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoolerCompatibility_Coolers" Association="Self.FK_CoolerCompatibility_Coolers">
+            <End Role="Coolers" EntitySet="Coolers" />
+            <End Role="CoolerCompatibility" EntitySet="CoolerCompatibilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoolerCompatibility_Sockets" Association="Self.FK_CoolerCompatibility_Sockets">
+            <End Role="Sockets" EntitySet="Sockets" />
+            <End Role="CoolerCompatibility" EntitySet="CoolerCompatibilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Coolers_CoolerType" Association="Self.FK_Coolers_CoolerType">
+            <End Role="CoolerType" EntitySet="CoolerTypes" />
+            <End Role="Coolers" EntitySet="Coolers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videocards_DirectXVersions" Association="Self.FK_Videocards_DirectXVersions">
+            <End Role="DirectXVersions" EntitySet="DirectXVersions" />
+            <End Role="Videocards" EntitySet="Videocards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpticalDrives_DriveTypes" Association="Self.FK_OpticalDrives_DriveTypes">
+            <End Role="DriveTypes" EntitySet="DriveTypes" />
+            <End Role="OpticalDrives" EntitySet="OpticalDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HardDrives_FormFactorsD" Association="Self.FK_HardDrives_FormFactorsD">
+            <End Role="FormFactorsD" EntitySet="FormFactorsDs" />
+            <End Role="HardDrives" EntitySet="HardDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpticalDrives_FormFactorsD" Association="Self.FK_OpticalDrives_FormFactorsD">
+            <End Role="FormFactorsD" EntitySet="FormFactorsDs" />
+            <End Role="OpticalDrives" EntitySet="OpticalDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SSDDrives_FormFactorsD" Association="Self.FK_SSDDrives_FormFactorsD">
+            <End Role="FormFactorsD" EntitySet="FormFactorsDs" />
+            <End Role="SSDDrives" EntitySet="SSDDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HardDrives_FormFactorsHD" Association="Self.FK_HardDrives_FormFactorsHD">
+            <End Role="FormFactorsHD" EntitySet="FormFactorsHDs" />
+            <End Role="HardDrives" EntitySet="HardDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SSDDrives_FormFactorsHD" Association="Self.FK_SSDDrives_FormFactorsHD">
+            <End Role="FormFactorsHD" EntitySet="FormFactorsHDs" />
+            <End Role="SSDDrives" EntitySet="SSDDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_FormFactorsM" Association="Self.FK_Motherboards_FormFactorsM">
+            <End Role="FormFactorsM" EntitySet="FormFactorsMs" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_FormFactorsM" Association="Self.FK_RAM_FormFactorsM">
+            <End Role="FormFactorsM" EntitySet="FormFactorsMs" />
+            <End Role="RAM" EntitySet="RAMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_FormFactorsMB" Association="Self.FK_Motherboards_FormFactorsMB">
+            <End Role="FormFactorsMB" EntitySet="FormFactorsMBs" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PowerBlocks_FormFactorsPB" Association="Self.FK_PowerBlocks_FormFactorsPB">
+            <End Role="FormFactorsPB" EntitySet="FormFactorsPBs" />
+            <End Role="PowerBlocks" EntitySet="PowerBlocks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videocards_GPUModels" Association="Self.FK_Videocards_GPUModels">
+            <End Role="GPUModels" EntitySet="GPUModels" />
+            <End Role="Videocards" EntitySet="Videocards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HardDrives_HDMemoryType" Association="Self.FK_HardDrives_HDMemoryType">
+            <End Role="HDMemoryType" EntitySet="HDMemoryTypes" />
+            <End Role="HardDrives" EntitySet="HardDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HardDrives_Interfaces" Association="Self.FK_HardDrives_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="HardDrives" EntitySet="HardDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SSDDrives_HDMemoryType" Association="Self.FK_SSDDrives_HDMemoryType">
+            <End Role="HDMemoryType" EntitySet="HDMemoryTypes" />
+            <End Role="SSDDrives" EntitySet="SSDDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_Interfaces" Association="Self.FK_Motherboards_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OpticalDrives_Interfaces" Association="Self.FK_OpticalDrives_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="OpticalDrives" EntitySet="OpticalDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SSDDrives_Interfaces" Association="Self.FK_SSDDrives_Interfaces">
+            <End Role="Interfaces" EntitySet="Interfaces" />
+            <End Role="SSDDrives" EntitySet="SSDDrives" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_MemoryTypes" Association="Self.FK_Motherboards_MemoryTypes">
+            <End Role="MemoryTypes" EntitySet="MemoryTypes" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_MemoryTypes" Association="Self.FK_RAM_MemoryTypes">
+            <End Role="MemoryTypes" EntitySet="MemoryTypes" />
+            <End Role="RAM" EntitySet="RAMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videocards_MemoryTypes" Association="Self.FK_Videocards_MemoryTypes">
+            <End Role="MemoryTypes" EntitySet="MemoryTypes" />
+            <End Role="Videocards" EntitySet="Videocards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboards_Sockets" Association="Self.FK_Motherboards_Sockets">
+            <End Role="Sockets" EntitySet="Sockets" />
+            <End Role="Motherboards" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videocards_OpenGLVersions" Association="Self.FK_Videocards_OpenGLVersions">
+            <End Role="OpenGLVersions" EntitySet="OpenGLVersions" />
+            <End Role="Videocards" EntitySet="Videocards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processors_ProcessorSeries" Association="Self.FK_Processors_ProcessorSeries">
+            <End Role="ProcessorSeries" EntitySet="ProcessorSeries" />
+            <End Role="Processors" EntitySet="Processors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processors_Sockets" Association="Self.FK_Processors_Sockets">
+            <End Role="Sockets" EntitySet="Sockets" />
+            <End Role="Processors" EntitySet="Processors" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelsContainer" CdmEntityContainer="ComponentsPC">
+          <EntitySetMapping Name="AudioCards">
+            <EntityTypeMapping TypeName="Models.AudioCard">
+              <MappingFragment StoreEntitySet="AudioCards">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Interface" ColumnName="Interface" />
+                <ScalarProperty Name="AudioChannels" ColumnName="AudioChannels" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AudioCardTypes">
+            <EntityTypeMapping TypeName="Models.AudioCardType">
+              <MappingFragment StoreEntitySet="AudioCardTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AudioChannels">
+            <EntityTypeMapping TypeName="Models.AudioChannel">
+              <MappingFragment StoreEntitySet="AudioChannels">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CasePlaces">
+            <EntityTypeMapping TypeName="Models.CasePlace">
+              <MappingFragment StoreEntitySet="CasePlace">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cases">
+            <EntityTypeMapping TypeName="Models.Case">
+              <MappingFragment StoreEntitySet="Cases">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+                <ScalarProperty Name="MBtype" ColumnName="MBtype" />
+                <ScalarProperty Name="PowerBlock" ColumnName="PowerBlock" />
+                <ScalarProperty Name="Count525" ColumnName="Count525" />
+                <ScalarProperty Name="Count35" ColumnName="Count35" />
+                <ScalarProperty Name="Count25" ColumnName="Count25" />
+                <ScalarProperty Name="ExpantionSlots" ColumnName="ExpantionSlots" />
+                <ScalarProperty Name="Fans" ColumnName="Fans" />
+                <ScalarProperty Name="FanPlaces" ColumnName="FanPlaces" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chipsets">
+            <EntityTypeMapping TypeName="Models.Chipset">
+              <MappingFragment StoreEntitySet="Chipsets">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CodeNames">
+            <EntityTypeMapping TypeName="Models.CodeName">
+              <MappingFragment StoreEntitySet="CodeNames">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoolerCompatibilities">
+            <EntityTypeMapping TypeName="Models.CoolerCompatibility">
+              <MappingFragment StoreEntitySet="CoolerCompatibility">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CoolerID" ColumnName="CoolerID" />
+                <ScalarProperty Name="SocketID" ColumnName="SocketID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coolers">
+            <EntityTypeMapping TypeName="Models.Cooler">
+              <MappingFragment StoreEntitySet="Coolers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="FanDiameter" ColumnName="FanDiameter" />
+                <ScalarProperty Name="FanSpeed" ColumnName="FanSpeed" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoolerTypes">
+            <EntityTypeMapping TypeName="Models.CoolerType">
+              <MappingFragment StoreEntitySet="CoolerType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DirectXVersions">
+            <EntityTypeMapping TypeName="Models.DirectXVersion">
+              <MappingFragment StoreEntitySet="DirectXVersions">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DriveTypes">
+            <EntityTypeMapping TypeName="Models.DriveType">
+              <MappingFragment StoreEntitySet="DriveTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormFactorsCs">
+            <EntityTypeMapping TypeName="Models.FormFactorsC">
+              <MappingFragment StoreEntitySet="FormFactorsC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormFactorsDs">
+            <EntityTypeMapping TypeName="Models.FormFactorsD">
+              <MappingFragment StoreEntitySet="FormFactorsD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormFactorsHDs">
+            <EntityTypeMapping TypeName="Models.FormFactorsHD">
+              <MappingFragment StoreEntitySet="FormFactorsHD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormFactorsMs">
+            <EntityTypeMapping TypeName="Models.FormFactorsM">
+              <MappingFragment StoreEntitySet="FormFactorsM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormFactorsMBs">
+            <EntityTypeMapping TypeName="Models.FormFactorsMB">
+              <MappingFragment StoreEntitySet="FormFactorsMB">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormFactorsPBs">
+            <EntityTypeMapping TypeName="Models.FormFactorsPB">
+              <MappingFragment StoreEntitySet="FormFactorsPB">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GPUModels">
+            <EntityTypeMapping TypeName="Models.GPUModel">
+              <MappingFragment StoreEntitySet="GPUModels">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HardDrives">
+            <EntityTypeMapping TypeName="Models.HardDrive">
+              <MappingFragment StoreEntitySet="HardDrives">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="MemoryType" ColumnName="MemoryType" />
+                <ScalarProperty Name="Interface" ColumnName="Interface" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+                <ScalarProperty Name="BuferCapacity" ColumnName="BuferCapacity" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HDMemoryTypes">
+            <EntityTypeMapping TypeName="Models.HDMemoryType">
+              <MappingFragment StoreEntitySet="HDMemoryType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Interfaces">
+            <EntityTypeMapping TypeName="Models.Interface">
+              <MappingFragment StoreEntitySet="Interfaces">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemoryTypes">
+            <EntityTypeMapping TypeName="Models.MemoryType">
+              <MappingFragment StoreEntitySet="MemoryTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motherboards">
+            <EntityTypeMapping TypeName="Models.Motherboard">
+              <MappingFragment StoreEntitySet="Motherboards">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+                <ScalarProperty Name="Chipset" ColumnName="Chipset" />
+                <ScalarProperty Name="MemoryType" ColumnName="MemoryType" />
+                <ScalarProperty Name="MemoryFormFactor" ColumnName="MemoryFormFactor" />
+                <ScalarProperty Name="MemoryChannels" ColumnName="MemoryChannels" />
+                <ScalarProperty Name="MaxFrequency" ColumnName="MaxFrequency" />
+                <ScalarProperty Name="MaxCapacity" ColumnName="MaxCapacity" />
+                <ScalarProperty Name="AudioChip" ColumnName="AudioChip" />
+                <ScalarProperty Name="AudioChannels" ColumnName="AudioChannels" />
+                <ScalarProperty Name="SATA3" ColumnName="SATA3" />
+                <ScalarProperty Name="M2connector" ColumnName="M2connector" />
+                <ScalarProperty Name="M2interface" ColumnName="M2interface" />
+                <ScalarProperty Name="PCIE1xSlots" ColumnName="PCIE1xSlots" />
+                <ScalarProperty Name="PCIE16xSlots" ColumnName="PCIE16xSlots" />
+                <ScalarProperty Name="PCIE30" ColumnName="PCIE30" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpenGLVersions">
+            <EntityTypeMapping TypeName="Models.OpenGLVersion">
+              <MappingFragment StoreEntitySet="OpenGLVersions">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpticalDrives">
+            <EntityTypeMapping TypeName="Models.OpticalDrive">
+              <MappingFragment StoreEntitySet="OpticalDrives">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+                <ScalarProperty Name="Interface" ColumnName="Interface" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PowerBlocks">
+            <EntityTypeMapping TypeName="Models.PowerBlock">
+              <MappingFragment StoreEntitySet="PowerBlocks">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+                <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+                <ScalarProperty Name="Sercificate" ColumnName="Sercificate" />
+                <ScalarProperty Name="SATAPower" ColumnName="SATAPower" />
+                <ScalarProperty Name="MolexPower" ColumnName="MolexPower" />
+                <ScalarProperty Name="PCIE8pinPower" ColumnName="PCIE8pinPower" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Processors">
+            <EntityTypeMapping TypeName="Models.Processor">
+              <MappingFragment StoreEntitySet="Processors">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Cores" ColumnName="Cores" />
+                <ScalarProperty Name="CoreFrequency" ColumnName="CoreFrequency" />
+                <ScalarProperty Name="TurboBoost" ColumnName="TurboBoost" />
+                <ScalarProperty Name="TechProcess" ColumnName="TechProcess" />
+                <ScalarProperty Name="L1" ColumnName="L1" />
+                <ScalarProperty Name="L2" ColumnName="L2" />
+                <ScalarProperty Name="L3" ColumnName="L3" />
+                <ScalarProperty Name="TDP" ColumnName="TDP" />
+                <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcessorSeries">
+            <EntityTypeMapping TypeName="Models.ProcessorSery">
+              <MappingFragment StoreEntitySet="ProcessorSeries">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAMs">
+            <EntityTypeMapping TypeName="Models.RAM">
+              <MappingFragment StoreEntitySet="RAM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="PlanksCount" ColumnName="PlanksCount" />
+                <ScalarProperty Name="MemoryType" ColumnName="MemoryType" />
+                <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="Timing1" ColumnName="Timing1" />
+                <ScalarProperty Name="Timing2" ColumnName="Timing2" />
+                <ScalarProperty Name="Timing3" ColumnName="Timing3" />
+                <ScalarProperty Name="Timing4" ColumnName="Timing4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sockets">
+            <EntityTypeMapping TypeName="Models.Socket">
+              <MappingFragment StoreEntitySet="Sockets">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SSDDrives">
+            <EntityTypeMapping TypeName="Models.SSDDrive">
+              <MappingFragment StoreEntitySet="SSDDrives">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="MemoryType" ColumnName="MemoryType" />
+                <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+                <ScalarProperty Name="Interface" ColumnName="Interface" />
+                <ScalarProperty Name="BuferCapacity" ColumnName="BuferCapacity" />
+                <ScalarProperty Name="SpeedWrite" ColumnName="SpeedWrite" />
+                <ScalarProperty Name="SpeedRead" ColumnName="SpeedRead" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Models.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Videocards">
+            <EntityTypeMapping TypeName="Models.Videocard">
+              <MappingFragment StoreEntitySet="Videocards">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="GPUModel" ColumnName="GPUModel" />
+                <ScalarProperty Name="MemoryCapacity" ColumnName="MemoryCapacity" />
+                <ScalarProperty Name="MemoryType" ColumnName="MemoryType" />
+                <ScalarProperty Name="BusWidth" ColumnName="BusWidth" />
+                <ScalarProperty Name="GPUFrequency" ColumnName="GPUFrequency" />
+                <ScalarProperty Name="MemoryFrequency" ColumnName="MemoryFrequency" />
+                <ScalarProperty Name="Techprocess" ColumnName="Techprocess" />
+                <ScalarProperty Name="MaxResolution" ColumnName="MaxResolution" />
+                <ScalarProperty Name="HDMI" ColumnName="HDMI" />
+                <ScalarProperty Name="DisplayPort" ColumnName="DisplayPort" />
+                <ScalarProperty Name="DirectX" ColumnName="DirectX" />
+                <ScalarProperty Name="OpenGL" ColumnName="OpenGL" />
+                <ScalarProperty Name="RecPB" ColumnName="RecPB" />
+                <ScalarProperty Name="ExpantionSlots" ColumnName="ExpantionSlots" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

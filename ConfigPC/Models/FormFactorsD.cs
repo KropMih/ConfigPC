@@ -12,24 +12,24 @@ namespace ConfigPC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class MemoryType
+    public partial class FormFactorsD
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MemoryType()
+        public FormFactorsD()
         {
-            this.Motherboards = new HashSet<Motherboard>();
-            this.RAMs = new HashSet<RAM>();
-            this.Videocards = new HashSet<Videocard>();
+            this.HardDrives = new HashSet<HardDrive>();
+            this.OpticalDrives = new HashSet<OpticalDrive>();
+            this.SSDDrives = new HashSet<SSDDrive>();
         }
     
         public short ID { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Motherboard> Motherboards { get; set; }
+        public virtual ICollection<HardDrive> HardDrives { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RAM> RAMs { get; set; }
+        public virtual ICollection<OpticalDrive> OpticalDrives { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Videocard> Videocards { get; set; }
+        public virtual ICollection<SSDDrive> SSDDrives { get; set; }
     }
 }
