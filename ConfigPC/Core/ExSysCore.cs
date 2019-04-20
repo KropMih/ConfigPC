@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using ConfigPC.Models;
 
@@ -21,46 +22,77 @@ namespace ConfigPC
             Purpose = purpose;
         }
 
-        public object Build()
+        public void Build()
         {
             using (ComponentsPC db = new ComponentsPC())
             {
                 SetPriceFactors();
+                IEnumerable resultList;
 
                 ProcessorPrice = GetComponentPrice(ProcessorFactor);
-                var processors = db.Processors.Where(p => p.Price < ProcessorPrice*(decimal)1.1).ToList();
+                var processors = db.Processors
+                    .Where(p => p.Price < ProcessorPrice * (decimal)1.1)
+                    .Where(p => p.Price > ProcessorPrice * (decimal)0.9)
+                    .ToList();
 
+                //Сделать выбор компонента по "весу" параметров
                 MBPrice = GetComponentPrice(MBFactor);
-                var motherboards = db.Motherboards;
+                var motherboards = db.Motherboards
+                    .Where(p => p.Price < MBPrice*(decimal)1.1)
+                    .Where(p => p.Price > MBPrice * (decimal)0.9)
+                    .ToList();
 
                 if (VideocardFactor != 0f)
                 {
                     VideocardPrice = GetComponentPrice(VideocardFactor);
-                    var videocards = db.Videocards;
+                    var videocards = db.Videocards
+                        .Where(p => p.Price < VideocardPrice * (decimal)1.1)
+                        .Where(p => p.Price > VideocardPrice * (decimal)0.9)
+                        .ToList(); 
                 }
 
                 RAMPrice = GetComponentPrice(RAMFactor);
-                var RAMs = db.RAMs;
+                var RAMs = db.RAMs
+                    .Where(p => p.Price < RAMPrice * (decimal)1.1)
+                    .Where(p => p.Price > RAMPrice * (decimal)0.9)
+                    .ToList();
 
                 HDPrice = GetComponentPrice(HDFactor);
-                var HardDrives = db.HardDrives;
+                var HardDrives = db.HardDrives
+                    .Where(p => p.Price < HDPrice * (decimal)1.1)
+                    .Where(p => p.Price > HDPrice * (decimal)0.9)
+                    .ToList();
 
-                if (VideocardFactor != 0f)
+                if (SSDFactor != 0f)
                 {
                     SSDPrice = GetComponentPrice(SSDFactor);
-                    var SSDDrives = db.SSDDrives;
+                    var SSDDrives = db.SSDDrives
+                    .Where(p => p.Price < SSDPrice * (decimal)1.1)
+                    .Where(p => p.Price > SSDPrice * (decimal)0.9)
+                    .ToList();
                 }
 
                 CoolerPrice = GetComponentPrice(CoolerFactor);
-                var Cooelers = db.Coolers;
+                var Cooelers = db.Coolers
+                    .Where(p => p.Price < CoolerPrice * (decimal)1.1)
+                    .Where(p => p.Price > CoolerPrice * (decimal)0.9)
+                    .ToList();
 
                 CasePrice = GetComponentPrice(CaseFactor);
-                var Cases = db.Cases;
+                var Cases = db.Cases
+                    .Where(p => p.Price < CasePrice * (decimal)1.1)
+                    .Where(p => p.Price > CasePrice * (decimal)0.9)
+                    .ToList();
 
                 PBPrice = GetComponentPrice(PBFactor);
-                var PowerBlocks = db.PowerBlocks;
-
-                return processors;
+                var PowerBlocks = db.PowerBlocks
+                    .Where(p => p.Price < PBPrice * (decimal)1.1)
+                    .Where(p => p.Price > PBPrice * (decimal)0.9)
+                    .ToList();
+                ResultWindow result = new ResultWindow();
+                result.resultGrid.ItemsSource = resultList; //TODO опрелелится с выводом данных. 
+                //Нужны ли объекты на выбранный компонент, что бы открывать каждый компонент отдельным окном, или через DetailView
+                result.Show();
             }
         }
 

@@ -6,7 +6,30 @@
         xmlns:local="clr-namespace:ConfigPC"
         mc:Ignorable="d"
         Title="ResultWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Window.Resources>
+        <Style x:Key="LeftCol">
+            <Setter Property="Control.FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.Margin" Value="8"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="RightCol">
+            <Setter Property="Control.FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.Margin" Value="4"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Margin="20 20 20 20">
+        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 10" FontSize="24" FontFamily="Segoe UI Light">
+            Config PC: результат
+        </TextBlock>
+        <DataGrid x:Name="resultGrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Тип компонента" Binding="{Binding Path=Component}" Width="*"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=Title}" Width="3*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}" Width="*"/>
+                <DataGridHyperlinkColumn Header="Ссылка" Binding="{Binding Path=Source}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
 </Window>
