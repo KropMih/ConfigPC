@@ -23,7 +23,7 @@ namespace ConfigPC.Models
         public short MemoryType { get; set; }
         public short FormFactor { get; set; }
         public Nullable<short> Frequency { get; set; }
-        public Nullable<byte> Speed { get; set; }
+        public Nullable<int> Speed { get; set; }
         public Nullable<byte> Timing1 { get; set; }
         public Nullable<byte> Timing2 { get; set; }
         public Nullable<byte> Timing3 { get; set; }

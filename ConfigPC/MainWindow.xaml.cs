@@ -27,5 +27,6 @@ namespace ConfigPC
                 label.Text = "Введите бюджет.";
             }
         }
+
     }
 }

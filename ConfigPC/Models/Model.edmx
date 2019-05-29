@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Models" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AudioCards">
           <Key>
             <PropertyRef Name="ID" />
@@ -174,10 +174,10 @@
           <Property Name="Type" Type="smallint" />
           <Property Name="MemoryType" Type="smallint" />
           <Property Name="Interface" Type="smallint" />
-          <Property Name="Capacity" Type="tinyint" />
+          <Property Name="Capacity" Type="int" />
           <Property Name="FormFactor" Type="smallint" />
-          <Property Name="BuferCapacity" Type="tinyint" />
-          <Property Name="Speed" Type="tinyint" />
+          <Property Name="BuferCapacity" Type="int" />
+          <Property Name="Speed" Type="int" />
         </EntityType>
         <EntityType Name="HDMemoryType">
           <Key>
@@ -252,7 +252,7 @@
           <Property Name="Name" Type="ntext" Nullable="false" />
           <Property Name="Price" Type="money" Nullable="false" />
           <Property Name="Source" Type="ntext" Nullable="false" />
-          <Property Name="Power" Type="tinyint" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
           <Property Name="FormFactor" Type="smallint" />
           <Property Name="Sercificate" Type="ntext" />
           <Property Name="SATAPower" Type="tinyint" />
@@ -300,7 +300,7 @@
           <Property Name="MemoryType" Type="smallint" Nullable="false" />
           <Property Name="FormFactor" Type="smallint" Nullable="false" />
           <Property Name="Frequency" Type="smallint" />
-          <Property Name="Speed" Type="tinyint" />
+          <Property Name="Speed" Type="int" />
           <Property Name="Timing1" Type="tinyint" />
           <Property Name="Timing2" Type="tinyint" />
           <Property Name="Timing3" Type="tinyint" />
@@ -322,13 +322,13 @@
           <Property Name="Price" Type="money" Nullable="false" />
           <Property Name="Source" Type="ntext" Nullable="false" />
           <Property Name="Type" Type="smallint" />
-          <Property Name="Capacity" Type="tinyint" />
+          <Property Name="Capacity" Type="int" />
           <Property Name="MemoryType" Type="smallint" />
           <Property Name="FormFactor" Type="smallint" />
           <Property Name="Interface" Type="smallint" />
-          <Property Name="BuferCapacity" Type="tinyint" />
-          <Property Name="SpeedWrite" Type="tinyint" />
-          <Property Name="SpeedRead" Type="tinyint" />
+          <Property Name="BuferCapacity" Type="int" />
+          <Property Name="SpeedWrite" Type="int" />
+          <Property Name="SpeedRead" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -808,7 +808,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище ModelsContainer">
+        <EntityContainer Name="Хранилище ModelContainer">
           <EntitySet Name="AudioCards" EntityType="Self.AudioCards" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AudioCardTypes" EntityType="Self.AudioCardTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AudioChannels" EntityType="Self.AudioChannels" Schema="dbo" store:Type="Tables" />
@@ -996,7 +996,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="AudioCard">
           <Key>
             <PropertyRef Name="ID" />
@@ -1197,10 +1197,10 @@
           <Property Name="Type" Type="Int16" />
           <Property Name="MemoryType" Type="Int16" />
           <Property Name="Interface" Type="Int16" />
-          <Property Name="Capacity" Type="Byte" />
+          <Property Name="Capacity" Type="Int32" />
           <Property Name="FormFactor" Type="Int16" />
-          <Property Name="BuferCapacity" Type="Byte" />
-          <Property Name="Speed" Type="Byte" />
+          <Property Name="BuferCapacity" Type="Int32" />
+          <Property Name="Speed" Type="Int32" />
           <NavigationProperty Name="FormFactorsD" Relationship="Self.FK_HardDrives_FormFactorsD" FromRole="HardDrives" ToRole="FormFactorsD" />
           <NavigationProperty Name="FormFactorsHD" Relationship="Self.FK_HardDrives_FormFactorsHD" FromRole="HardDrives" ToRole="FormFactorsHD" />
           <NavigationProperty Name="HDMemoryType" Relationship="Self.FK_HardDrives_HDMemoryType" FromRole="HardDrives" ToRole="HDMemoryType" />
@@ -1300,7 +1300,7 @@
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Power" Type="Byte" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
           <Property Name="FormFactor" Type="Int16" />
           <Property Name="Sercificate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SATAPower" Type="Byte" />
@@ -1353,7 +1353,7 @@
           <Property Name="MemoryType" Type="Int16" Nullable="false" />
           <Property Name="FormFactor" Type="Int16" Nullable="false" />
           <Property Name="Frequency" Type="Int16" />
-          <Property Name="Speed" Type="Byte" />
+          <Property Name="Speed" Type="Int32" />
           <Property Name="Timing1" Type="Byte" />
           <Property Name="Timing2" Type="Byte" />
           <Property Name="Timing3" Type="Byte" />
@@ -1380,13 +1380,13 @@
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Type" Type="Int16" />
-          <Property Name="Capacity" Type="Byte" />
+          <Property Name="Capacity" Type="Int32" />
           <Property Name="MemoryType" Type="Int16" />
           <Property Name="FormFactor" Type="Int16" />
           <Property Name="Interface" Type="Int16" />
-          <Property Name="BuferCapacity" Type="Byte" />
-          <Property Name="SpeedWrite" Type="Byte" />
-          <Property Name="SpeedRead" Type="Byte" />
+          <Property Name="BuferCapacity" Type="Int32" />
+          <Property Name="SpeedWrite" Type="Int32" />
+          <Property Name="SpeedRead" Type="Int32" />
           <NavigationProperty Name="FormFactorsD" Relationship="Self.FK_SSDDrives_FormFactorsD" FromRole="SSDDrives" ToRole="FormFactorsD" />
           <NavigationProperty Name="FormFactorsHD" Relationship="Self.FK_SSDDrives_FormFactorsHD" FromRole="SSDDrives" ToRole="FormFactorsHD" />
           <NavigationProperty Name="HDMemoryType" Relationship="Self.FK_SSDDrives_HDMemoryType" FromRole="SSDDrives" ToRole="HDMemoryType" />
@@ -1874,7 +1874,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ComponentsPC" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ComponentsPC6" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AudioCards" EntityType="Self.AudioCard" />
           <EntitySet Name="AudioCardTypes" EntityType="Self.AudioCardType" />
           <EntitySet Name="AudioChannels" EntityType="Self.AudioChannel" />
@@ -2063,9 +2063,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ModelsContainer" CdmEntityContainer="ComponentsPC">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="ComponentsPC6">
           <EntitySetMapping Name="AudioCards">
-            <EntityTypeMapping TypeName="Models.AudioCard">
+            <EntityTypeMapping TypeName="Model.AudioCard">
               <MappingFragment StoreEntitySet="AudioCards">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2078,7 +2078,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AudioCardTypes">
-            <EntityTypeMapping TypeName="Models.AudioCardType">
+            <EntityTypeMapping TypeName="Model.AudioCardType">
               <MappingFragment StoreEntitySet="AudioCardTypes">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2086,7 +2086,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AudioChannels">
-            <EntityTypeMapping TypeName="Models.AudioChannel">
+            <EntityTypeMapping TypeName="Model.AudioChannel">
               <MappingFragment StoreEntitySet="AudioChannels">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2094,7 +2094,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CasePlaces">
-            <EntityTypeMapping TypeName="Models.CasePlace">
+            <EntityTypeMapping TypeName="Model.CasePlace">
               <MappingFragment StoreEntitySet="CasePlace">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2102,7 +2102,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cases">
-            <EntityTypeMapping TypeName="Models.Case">
+            <EntityTypeMapping TypeName="Model.Case">
               <MappingFragment StoreEntitySet="Cases">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2122,7 +2122,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Chipsets">
-            <EntityTypeMapping TypeName="Models.Chipset">
+            <EntityTypeMapping TypeName="Model.Chipset">
               <MappingFragment StoreEntitySet="Chipsets">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2130,7 +2130,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CodeNames">
-            <EntityTypeMapping TypeName="Models.CodeName">
+            <EntityTypeMapping TypeName="Model.CodeName">
               <MappingFragment StoreEntitySet="CodeNames">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2138,7 +2138,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CoolerCompatibilities">
-            <EntityTypeMapping TypeName="Models.CoolerCompatibility">
+            <EntityTypeMapping TypeName="Model.CoolerCompatibility">
               <MappingFragment StoreEntitySet="CoolerCompatibility">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="CoolerID" ColumnName="CoolerID" />
@@ -2147,7 +2147,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Coolers">
-            <EntityTypeMapping TypeName="Models.Cooler">
+            <EntityTypeMapping TypeName="Model.Cooler">
               <MappingFragment StoreEntitySet="Coolers">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2162,7 +2162,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CoolerTypes">
-            <EntityTypeMapping TypeName="Models.CoolerType">
+            <EntityTypeMapping TypeName="Model.CoolerType">
               <MappingFragment StoreEntitySet="CoolerType">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2170,7 +2170,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DirectXVersions">
-            <EntityTypeMapping TypeName="Models.DirectXVersion">
+            <EntityTypeMapping TypeName="Model.DirectXVersion">
               <MappingFragment StoreEntitySet="DirectXVersions">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2178,7 +2178,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DriveTypes">
-            <EntityTypeMapping TypeName="Models.DriveType">
+            <EntityTypeMapping TypeName="Model.DriveType">
               <MappingFragment StoreEntitySet="DriveTypes">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2186,7 +2186,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FormFactorsCs">
-            <EntityTypeMapping TypeName="Models.FormFactorsC">
+            <EntityTypeMapping TypeName="Model.FormFactorsC">
               <MappingFragment StoreEntitySet="FormFactorsC">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2194,7 +2194,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FormFactorsDs">
-            <EntityTypeMapping TypeName="Models.FormFactorsD">
+            <EntityTypeMapping TypeName="Model.FormFactorsD">
               <MappingFragment StoreEntitySet="FormFactorsD">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2202,7 +2202,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FormFactorsHDs">
-            <EntityTypeMapping TypeName="Models.FormFactorsHD">
+            <EntityTypeMapping TypeName="Model.FormFactorsHD">
               <MappingFragment StoreEntitySet="FormFactorsHD">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2210,7 +2210,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FormFactorsMs">
-            <EntityTypeMapping TypeName="Models.FormFactorsM">
+            <EntityTypeMapping TypeName="Model.FormFactorsM">
               <MappingFragment StoreEntitySet="FormFactorsM">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2218,7 +2218,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FormFactorsMBs">
-            <EntityTypeMapping TypeName="Models.FormFactorsMB">
+            <EntityTypeMapping TypeName="Model.FormFactorsMB">
               <MappingFragment StoreEntitySet="FormFactorsMB">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2226,7 +2226,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FormFactorsPBs">
-            <EntityTypeMapping TypeName="Models.FormFactorsPB">
+            <EntityTypeMapping TypeName="Model.FormFactorsPB">
               <MappingFragment StoreEntitySet="FormFactorsPB">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2234,7 +2234,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GPUModels">
-            <EntityTypeMapping TypeName="Models.GPUModel">
+            <EntityTypeMapping TypeName="Model.GPUModel">
               <MappingFragment StoreEntitySet="GPUModels">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2242,7 +2242,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HardDrives">
-            <EntityTypeMapping TypeName="Models.HardDrive">
+            <EntityTypeMapping TypeName="Model.HardDrive">
               <MappingFragment StoreEntitySet="HardDrives">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2259,7 +2259,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HDMemoryTypes">
-            <EntityTypeMapping TypeName="Models.HDMemoryType">
+            <EntityTypeMapping TypeName="Model.HDMemoryType">
               <MappingFragment StoreEntitySet="HDMemoryType">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2267,7 +2267,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Interfaces">
-            <EntityTypeMapping TypeName="Models.Interface">
+            <EntityTypeMapping TypeName="Model.Interface">
               <MappingFragment StoreEntitySet="Interfaces">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2275,7 +2275,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MemoryTypes">
-            <EntityTypeMapping TypeName="Models.MemoryType">
+            <EntityTypeMapping TypeName="Model.MemoryType">
               <MappingFragment StoreEntitySet="MemoryTypes">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2283,7 +2283,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Motherboards">
-            <EntityTypeMapping TypeName="Models.Motherboard">
+            <EntityTypeMapping TypeName="Model.Motherboard">
               <MappingFragment StoreEntitySet="Motherboards">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2309,7 +2309,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OpenGLVersions">
-            <EntityTypeMapping TypeName="Models.OpenGLVersion">
+            <EntityTypeMapping TypeName="Model.OpenGLVersion">
               <MappingFragment StoreEntitySet="OpenGLVersions">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2317,7 +2317,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OpticalDrives">
-            <EntityTypeMapping TypeName="Models.OpticalDrive">
+            <EntityTypeMapping TypeName="Model.OpticalDrive">
               <MappingFragment StoreEntitySet="OpticalDrives">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2330,7 +2330,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PowerBlocks">
-            <EntityTypeMapping TypeName="Models.PowerBlock">
+            <EntityTypeMapping TypeName="Model.PowerBlock">
               <MappingFragment StoreEntitySet="PowerBlocks">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2346,7 +2346,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Processors">
-            <EntityTypeMapping TypeName="Models.Processor">
+            <EntityTypeMapping TypeName="Model.Processor">
               <MappingFragment StoreEntitySet="Processors">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2368,7 +2368,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProcessorSeries">
-            <EntityTypeMapping TypeName="Models.ProcessorSery">
+            <EntityTypeMapping TypeName="Model.ProcessorSery">
               <MappingFragment StoreEntitySet="ProcessorSeries">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2376,7 +2376,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RAMs">
-            <EntityTypeMapping TypeName="Models.RAM">
+            <EntityTypeMapping TypeName="Model.RAM">
               <MappingFragment StoreEntitySet="RAM">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2396,7 +2396,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sockets">
-            <EntityTypeMapping TypeName="Models.Socket">
+            <EntityTypeMapping TypeName="Model.Socket">
               <MappingFragment StoreEntitySet="Sockets">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2404,7 +2404,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SSDDrives">
-            <EntityTypeMapping TypeName="Models.SSDDrive">
+            <EntityTypeMapping TypeName="Model.SSDDrive">
               <MappingFragment StoreEntitySet="SSDDrives">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -2422,7 +2422,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Models.sysdiagram">
+            <EntityTypeMapping TypeName="Model.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -2433,7 +2433,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Videocards">
-            <EntityTypeMapping TypeName="Models.Videocard">
+            <EntityTypeMapping TypeName="Model.Videocard">
               <MappingFragment StoreEntitySet="Videocards">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

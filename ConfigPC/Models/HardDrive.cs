@@ -21,10 +21,10 @@ namespace ConfigPC.Models
         public Nullable<short> Type { get; set; }
         public Nullable<short> MemoryType { get; set; }
         public Nullable<short> Interface { get; set; }
-        public Nullable<byte> Capacity { get; set; }
+        public Nullable<int> Capacity { get; set; }
         public Nullable<short> FormFactor { get; set; }
-        public Nullable<byte> BuferCapacity { get; set; }
-        public Nullable<byte> Speed { get; set; }
+        public Nullable<int> BuferCapacity { get; set; }
+        public Nullable<int> Speed { get; set; }
     
         public virtual FormFactorsD FormFactorsD { get; set; }
         public virtual FormFactorsHD FormFactorsHD { get; set; }

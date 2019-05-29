@@ -18,7 +18,7 @@ namespace ConfigPC.Models
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Source { get; set; }
-        public byte Power { get; set; }
+        public int Power { get; set; }
         public Nullable<short> FormFactor { get; set; }
         public string Sercificate { get; set; }
         public Nullable<byte> SATAPower { get; set; }

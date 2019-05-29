@@ -19,13 +19,13 @@ namespace ConfigPC.Models
         public decimal Price { get; set; }
         public string Source { get; set; }
         public Nullable<short> Type { get; set; }
-        public Nullable<byte> Capacity { get; set; }
+        public Nullable<int> Capacity { get; set; }
         public Nullable<short> MemoryType { get; set; }
         public Nullable<short> FormFactor { get; set; }
         public Nullable<short> Interface { get; set; }
-        public Nullable<byte> BuferCapacity { get; set; }
-        public Nullable<byte> SpeedWrite { get; set; }
-        public Nullable<byte> SpeedRead { get; set; }
+        public Nullable<int> BuferCapacity { get; set; }
+        public Nullable<int> SpeedWrite { get; set; }
+        public Nullable<int> SpeedRead { get; set; }
     
         public virtual FormFactorsD FormFactorsD { get; set; }
         public virtual FormFactorsHD FormFactorsHD { get; set; }

@@ -26,9 +26,15 @@
         <DataGrid x:Name="resultGrid" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Тип компонента" Binding="{Binding Path=Component}" Width="*"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding Path=Title}" Width="3*"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=Title}" Width="2*"/>
                 <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}" Width="*"/>
-                <DataGridHyperlinkColumn Header="Ссылка" Binding="{Binding Path=Source}" Width="*"/>
+                <DataGridHyperlinkColumn Header="Ссылка" Binding="{Binding Path=Source}" Width="*">
+                    <DataGridHyperlinkColumn.ElementStyle>
+                        <Style>
+                            <EventSetter Event="Hyperlink.Click" Handler="DG_Hyperlink_Click"/>
+                        </Style>
+                    </DataGridHyperlinkColumn.ElementStyle>
+                </DataGridHyperlinkColumn>
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
