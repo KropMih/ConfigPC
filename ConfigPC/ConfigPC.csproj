@@ -80,40 +80,40 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Core\ExSysCore.cs" />
-    <Compile Include="Models\AudioCards.cs">
+    <Compile Include="Models\AudioCard.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AudioCardTypes.cs">
+    <Compile Include="Models\AudioCardType.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AudioChannels.cs">
+    <Compile Include="Models\AudioChannel.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Case.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CasePlace.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cases.cs">
+    <Compile Include="Models\Chipset.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Chipsets.cs">
+    <Compile Include="Models\CodeName.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CodeNames.cs">
+    <Compile Include="Models\Cooler.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CoolerCompatibility.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Coolers.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\CoolerType.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DirectXVersions.cs">
+    <Compile Include="Models\DirectXVersion.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DriveTypes.cs">
+    <Compile Include="Models\DriveType.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FormFactorsC.cs">
@@ -134,19 +134,19 @@
     <Compile Include="Models\FormFactorsPB.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GPUModels.cs">
+    <Compile Include="Models\GPUModel.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HardDrives.cs">
+    <Compile Include="Models\HardDrive.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HDMemoryType.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Interfaces.cs">
+    <Compile Include="Models\Interface.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MemoryTypes.cs">
+    <Compile Include="Models\MemoryType.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model.Context.cs">
@@ -164,37 +164,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Motherboards.cs">
+    <Compile Include="Models\Motherboard.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\OpenGLVersions.cs">
+    <Compile Include="Models\OpenGLVersion.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\OpticalDrives.cs">
+    <Compile Include="Models\OpticalDrive.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PowerBlocks.cs">
+    <Compile Include="Models\PowerBlock.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Processors.cs">
+    <Compile Include="Models\Processor.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProcessorSeries.cs">
+    <Compile Include="Models\ProcessorSery.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RAM.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Sockets.cs">
+    <Compile Include="Models\Socket.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SSDDrives.cs">
+    <Compile Include="Models\SSDDrive.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Videocards.cs">
+    <Compile Include="Models\Videocard.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="ResultWindow.xaml.cs">
