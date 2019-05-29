@@ -5,49 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConfigPC"
         mc:Ignorable="d"
-        Title="ConfigPC" Height="268" Width="400">
+        Title="ConfigPC" Height="300" Width="450"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
     <Window.Resources>
-        <Style x:Key="LeftCol">
-            <Setter Property="Control.FontFamily" Value="Segoe UI Light"/>
-            <Setter Property="Control.FontSize" Value="14"/>
-            <Setter Property="Control.Margin" Value="8"/>
-            <Setter Property="Control.HorizontalAlignment" Value="Right"/>
-        </Style>
-        <Style x:Key="RightCol">
-            <Setter Property="Control.FontFamily" Value="Segoe UI Light"/>
-            <Setter Property="Control.FontSize" Value="14"/>
-            <Setter Property="Control.Margin" Value="4"/>
-        </Style>
     </Window.Resources>
-    <StackPanel Margin="20 20 20 20">
-        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 10" FontSize="24" FontFamily="Segoe UI Light">
+    <StackPanel Margin="5 10 5 0" Background="{DynamicResource MaterialDesignCardBackground}">
+        <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" HorizontalAlignment="Center">
             Config PC
         </TextBlock>
-        <Grid Margin="0 0 0 10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <TextBlock Style="{StaticResource LeftCol}">
+        <materialDesign:Card Background="{DynamicResource PrimaryHueMidBrush}" Padding="22" Margin="16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Style="{DynamicResource MaterialDesignBody2TextBlock }" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Center">
                 Ваш бюджет
                 </TextBlock>
-                <TextBlock Style="{StaticResource LeftCol}">
+                <TextBlock Grid.Column="0" Grid.Row="1" Style="{DynamicResource MaterialDesignBody2TextBlock}" Foreground="{DynamicResource PrimaryHueMidForegroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Center">
                 Назначение
                 </TextBlock>
-            </StackPanel>
-            <StackPanel Grid.Column="1">
-                <TextBox x:Name="Price" Style="{StaticResource RightCol}" Padding="3"/>
-                <ComboBox x:Name="Purpose" Style="{StaticResource RightCol}">
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="Price" Style="{DynamicResource MaterialDesignTextBox}" Background="{DynamicResource PrimaryHueLightBrush}" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" Padding="1" Margin="6 6 6 6"/>
+                <ComboBox Grid.Column="1" Grid.Row="1" x:Name="Purpose" Style="{DynamicResource MaterialDesignComboBox}" Background="{DynamicResource PrimaryHueLightBrush}" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" Padding="6" Margin=" 6 6 6 6">
                     <ComboBoxItem Content="Работа с видео/фото"/>
                     <ComboBoxItem Content="Игровой" IsSelected="True"/>
                     <ComboBoxItem Content="Офисный"/>
                     <ComboBoxItem Content="Интернет серфинг"/>
                     <ComboBoxItem Content="Сервер"/>
-                </ComboBox>                
-            </StackPanel>
-        </Grid>
-        <Button x:Name="Start" Width="70" HorizontalAlignment="Center" Content="Собрать" Style="{StaticResource LeftCol}" Click="Start_Click"/>
-        <TextBlock x:Name="label" HorizontalAlignment="Center" Style="{StaticResource LeftCol}"/>
+                </ComboBox>
+            </Grid>
+        </materialDesign:Card>
+        <TextBlock Style="{DynamicResource MaterialDesignBody2TextBlock }" x:Name="label"/>
+        <Button x:Name="Start" HorizontalAlignment="Center" Content="Собрать" Style="{DynamicResource MaterialDesignRaisedLightButton}" Click="Start_Click"/>
     </StackPanel>
 </Window>

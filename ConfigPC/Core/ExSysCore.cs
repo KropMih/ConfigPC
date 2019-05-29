@@ -33,7 +33,7 @@ namespace ConfigPC
                 ProcessorPrice = GetComponentPrice(ProcessorFactor);
                 var processors = db.Processors
                     .Where(p => p.Price < ProcessorPrice * (decimal)1.1)
-                    .Where(p => p.Price > ProcessorPrice * (decimal)0.9)
+                    .Where(p => p.Price > ProcessorPrice * (decimal)0.5)
                     .ToList()
                     .GroupBy(p => p.ID)
                     .Select(query => new {
@@ -67,16 +67,16 @@ namespace ConfigPC
                     VideocardPrice = GetComponentPrice(VideocardFactor);
                     var videocards = db.Videocards
                         .Where(p => p.Price < VideocardPrice * (decimal)1.1)
-                        .Where(p => p.Price > VideocardPrice * (decimal)0.9)
+                        .Where(p => p.Price > VideocardPrice * (decimal)0.5)
                         .ToList()
                         .GroupBy(p => p.ID)
                         .Select(query => new {
                             MaxCoef = query.Max(p => (p.BusWidth*10 + p.GPUFrequency + p.MemoryFrequency*p.MemoryCapacity / 10)/p.Techprocess),
                             Id = query.Key,
                         });
-                    var videacardId = videocards.OrderBy(p => p.MaxCoef).Last().Id;
+                    var videocardId = videocards.OrderBy(p => p.MaxCoef).Last().Id;
                     var videocard = db.Videocards
-                        .Where(p => p.ID == videacardId)
+                        .Where(p => p.ID == videocardId)
                         .Single();
                     resultList.Add(new { Component = "Видеокарта", Title = videocard.Name, videocard.Price, videocard.Source });
 
@@ -101,16 +101,59 @@ namespace ConfigPC
                 HDPrice = GetComponentPrice(HDFactor);
                 var HardDrives = db.HardDrives
                     .Where(p => p.Price < HDPrice * (decimal)1.1)
-                    .Where(p => p.Price > HDPrice * (decimal)0.9)
-                    .ToList();
+                    .Where(p => p.Price > HDPrice * (decimal)0.5)
+                    .ToList()
+                    .GroupBy(p => p.ID)
+                    .Select(query => new {
+                        MaxCoef = query.Max(p => (p.Capacity * p.Speed / (p.BuferCapacity + 1))),
+                        Id = query.Key,
+                    }); ;
+                var HardDriveId = HardDrives.OrderBy(p => p.MaxCoef).Last().Id;
+                var HardDrive = db.HardDrives
+                    .Where(p => p.ID == HardDriveId)
+                    .Single();
+                resultList.Add(new { Component = "HDD", Title = HardDrive.Name, HardDrive.Price, HardDrive.Source });
 
                 if (SSDFactor != 0f)
                 {
-                    SSDPrice = GetComponentPrice(SSDFactor);
-                    var SSDDrives = db.SSDDrives
-                    .Where(p => p.Price < SSDPrice * (decimal)1.1)
-                    .Where(p => p.Price > SSDPrice * (decimal)0.9)
-                    .ToList();
+                    if (motheboard.M2connector > 0)
+                    {
+                        SSDPrice = GetComponentPrice(SSDFactor);
+                        var SSDDrives = db.SSDDrives
+                        .Where(p => p.Price < SSDPrice * (decimal)1.1)
+                        .Where(p => p.Price > SSDPrice * (decimal)0.5)
+                        .Where(p => p.FormFactor == 4)
+                        .ToList()
+                        .GroupBy(p => p.ID)
+                        .Select(query => new {
+                            MaxCoef = query.Max(p => (p.Capacity * (p.SpeedRead + p.SpeedWrite) / (p.BuferCapacity + 1))),
+                            Id = query.Key,
+                        });
+                        var SSDId = SSDDrives.OrderBy(p => p.MaxCoef).Last().Id;
+                        var SSDDrive = db.SSDDrives
+                            .Where(p => p.ID == SSDId)
+                            .Single();
+                        resultList.Add(new { Component = "SSD", Title = SSDDrive.Name, SSDDrive.Price, SSDDrive.Source });
+                    }
+                    else if (motheboard.SATA3 > 0)
+                    {
+                        SSDPrice = GetComponentPrice(SSDFactor);
+                        var SSDDrives = db.SSDDrives
+                        .Where(p => p.Price < SSDPrice * (decimal)1.1)
+                        .Where(p => p.Price > SSDPrice * (decimal)0.5)
+                        .Where(p => p.FormFactor == 1)
+                        .ToList()
+                        .GroupBy(p => p.ID)
+                        .Select(query => new {
+                            MaxCoef = query.Max(p => (p.Capacity * (p.SpeedRead + p.SpeedWrite) / (p.BuferCapacity + 1))),
+                            Id = query.Key,
+                        });
+                        var SSDId = SSDDrives.OrderBy(p => p.MaxCoef).Last().Id;
+                        var SSDDrive = db.SSDDrives
+                            .Where(p => p.ID == SSDId)
+                            .Single();
+                        resultList.Add(new { Component = "SSD", Title = SSDDrive.Name, SSDDrive.Price, SSDDrive.Source });
+                    }
                 }
 
                 CoolerPrice = GetComponentPrice(CoolerFactor);
@@ -140,7 +183,19 @@ namespace ConfigPC
                 var PowerBlocks = db.PowerBlocks
                     .Where(p => p.Price < PBPrice * (decimal)1.1)
                     .Where(p => p.Price > PBPrice * (decimal)0.9)
-                    .ToList();
+                    .ToList()
+                    .GroupBy(p => p.ID)
+                    .Select(query => new {
+                        MaxCoef = query.Max(p => (p.Power * (p.PCIE8pinPower + p.SATAPower + p.MolexPower))),
+                        Id = query.Key,
+                    });
+                var PBId = PowerBlocks.OrderBy(p => p.MaxCoef).Last().Id;
+                var PowerBlock = db.PowerBlocks
+                    .Where(p => p.ID == PBId)
+                    .Single();
+                resultList.Add(new { Component = "Блок питания", Title = PowerBlock.Name, PowerBlock.Price, PowerBlock.Source });
+
+
                 ResultWindow result = new ResultWindow();
                 result.resultGrid.ItemsSource = resultList;
                 
